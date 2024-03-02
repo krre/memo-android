@@ -2,6 +2,9 @@
 #include <QQmlApplicationEngine>
 
 int main(int argc, char* argv[]) {
+    QGuiApplication::setApplicationName("Memo");
+    QGuiApplication::setOrganizationName("Memo");
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
