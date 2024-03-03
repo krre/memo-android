@@ -1,5 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickStyle>
+#include <QIcon>
 
 int main(int argc, char* argv[]) {
     QGuiApplication::setApplicationName("Memo");
@@ -7,10 +9,15 @@ int main(int argc, char* argv[]) {
 
     QGuiApplication app(argc, argv);
 
+    QIcon::setThemeName("memo");
+    QQuickStyle::setStyle("Material");
+
     QQmlApplicationEngine engine;
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed, &app,
-        []() { QCoreApplication::exit(-1); }, Qt::QueuedConnection);
-    engine.loadFromModule("memo", "Main");
+    engine.load(QUrl("qrc:/Main.qml"));
+
+    if (engine.rootObjects().isEmpty()) {
+        return -1;
+    }
 
     return app.exec();
 }

@@ -4,7 +4,7 @@ project(Memo VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -14,13 +14,30 @@ qt_add_executable(Memo
 
 qt_add_qml_module(Memo
     URI memo
-    VERSION 1.0
-    QML_FILES Main.qml
-    QML_FILES page/database/CreatePage.qml
-    QML_FILES page/database/OpenPage.qml
-    QML_FILES page/database/ConnectPage.qml
-    QML_FILES page/NamePage.qml
-    QML_FILES page/database/DatabasePage.qml
+    NO_RESOURCE_TARGET_PATH
+    QML_FILES
+        "Main.qml"
+        "page/database/CreatePage.qml"
+        "page/database/OpenPage.qml"
+        "page/database/ConnectPage.qml"
+        "page/NamePage.qml"
+        "page/database/DatabasePage.qml"
+    RESOURCES
+        "icons/memo/20x20/back.png"
+        "icons/memo/20x20/drawer.png"
+        "icons/memo/20x20/menu.png"
+        "icons/memo/20x20@2/back.png"
+        "icons/memo/20x20@2/drawer.png"
+        "icons/memo/20x20@2/menu.png"
+        "icons/memo/20x20@3/back.png"
+        "icons/memo/20x20@3/drawer.png"
+        "icons/memo/20x20@3/menu.png"
+        "icons/memo/20x20@4/back.png"
+        "icons/memo/20x20@4/drawer.png"
+        "icons/memo/20x20@4/menu.png"
+        "icons/memo/index.theme"
+        "qmldir"
+        "qtquickcontrols2.conf"
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -34,8 +51,9 @@ set_target_properties(Memo PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(Memo
-    PRIVATE Qt6::Quick
+target_link_libraries(Memo PRIVATE
+    Qt6::Quick
+    Qt6::QuickControls2
 )
 
 include(GNUInstallDirs)
