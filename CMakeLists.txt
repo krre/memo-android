@@ -16,12 +16,12 @@ qt_add_qml_module(Memo
     URI memo
     NO_RESOURCE_TARGET_PATH
     QML_FILES
-        "Main.qml"
-        "page/database/CreatePage.qml"
-        "page/database/OpenPage.qml"
-        "page/database/ConnectPage.qml"
-        "page/NamePage.qml"
-        "page/database/DatabasePage.qml"
+        "qml/Main.qml"
+        "qml/page/database/CreatePage.qml"
+        "qml/page/database/OpenPage.qml"
+        "qml/page/database/ConnectPage.qml"
+        "qml/page/NamePage.qml"
+        "qml/page/database/DatabasePage.qml"
     RESOURCES
         "icons/memo/20x20/back.png"
         "icons/memo/20x20/drawer.png"
