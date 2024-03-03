@@ -77,6 +77,32 @@ ApplicationWindow {
 
     Drawer {
         id: drawer
+        height: parent.height
+
+        ListView {
+            id: listView
+            focus: true
+            currentIndex: -1
+            anchors.fill: parent
+
+            model: ListModel {
+                ListElement { title: qsTr("Exit") }
+            }
+
+            delegate: ItemDelegate {
+                id: delegateItem
+                width: ListView.view.width
+                text: title
+
+                onClicked: {
+                    if (index == 0) {
+                        Qt.quit()
+                    }
+
+                    drawer.close()
+                }
+            }
+        }
     }
 
     StackView {
