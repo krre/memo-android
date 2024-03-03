@@ -16,6 +16,11 @@ qt_add_qml_module(Memo
     URI memo
     VERSION 1.0
     QML_FILES Main.qml
+    QML_FILES page/database/CreatePage.qml
+    QML_FILES page/database/OpenPage.qml
+    QML_FILES page/database/ConnectPage.qml
+    QML_FILES page/NamePage.qml
+    QML_FILES page/database/DatabasePage.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
