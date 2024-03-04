@@ -63,6 +63,7 @@
     </message>
     <message>
         <location line="+27"/>
+        <location/>
         <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Note-taking for quick notes</source>
         <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок</translation>
     </message>

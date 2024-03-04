@@ -40,7 +40,16 @@ qt_add_qml_module(memo
         "qtquickcontrols2.conf"
 )
 
-qt_add_translations(memo TS_FILES i18n/memo-ru.ts)
+SET(TS_SOURCE i18n/memo-ru.ts)
+
+qt_add_translations(memo TS_FILES ${TS_SOURCE})
+
+# For visibility in IDE (e.g., Qt Creator)
+add_custom_target(other
+    SOURCES
+    README.md
+    ${TS_SOURCE}
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
