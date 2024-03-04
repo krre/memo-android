@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
 
     QGuiApplication app(argc, argv);
 
-    QIcon::setThemeName("memo");
+    QIcon::setThemeName("memo-qml");
     QQuickStyle::setStyle("Material");
 
     QQmlApplicationEngine engine;

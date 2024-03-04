@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Memo VERSION 0.1 LANGUAGES CXX)
+project(memo VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -8,12 +8,12 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(Memo
+qt_add_executable(memo
     cpp/main.cpp
 )
 
-qt_add_qml_module(Memo
-    URI memo
+qt_add_qml_module(memo
+    URI memo-qml
     NO_RESOURCE_TARGET_PATH
     QML_FILES
         "qml/Main.qml"
@@ -43,7 +43,7 @@ qt_add_qml_module(Memo
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(Memo PROPERTIES
+set_target_properties(memo PROPERTIES
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appmemo
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -52,14 +52,14 @@ set_target_properties(Memo PROPERTIES
     QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
 )
 
-target_link_libraries(Memo PRIVATE
+target_link_libraries(memo PRIVATE
     Qt6::Quick
     Qt6::QuickControls2
 )
 
 include(GNUInstallDirs)
 
-install(TARGETS Memo
+install(TARGETS memo
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
