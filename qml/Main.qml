@@ -40,6 +40,7 @@ ApplicationWindow {
 
                     Action {
                         text: qsTr("About")
+                        onTriggered: aboutDialog.open()
                     }
                 }
             }
@@ -102,6 +103,18 @@ ApplicationWindow {
                     drawer.close()
                 }
             }
+        }
+    }
+
+    Dialog {
+        id: aboutDialog
+        anchors.centerIn: parent
+        modal: true
+        focus: true
+        title: qsTr("About")
+
+        Label {
+            text: qsTr("<h3>%1 %2</h3><br>Note-taking for quick notes").arg(Qt.application.name).arg(Qt.application.version)
         }
     }
 

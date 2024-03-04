@@ -50,15 +50,21 @@
     <name>Main</name>
     <message>
         <location filename="../qml/Main.qml" line="+42"/>
+        <location line="+72"/>
         <location/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="-24"/>
         <location/>
         <source>Exit</source>
         <translation>Выйти</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Note-taking for quick notes</source>
+        <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок</translation>
     </message>
 </context>
 <context>

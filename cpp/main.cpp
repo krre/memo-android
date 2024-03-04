@@ -7,6 +7,7 @@
 int main(int argc, char* argv[]) {
     QGuiApplication::setApplicationName("Memo");
     QGuiApplication::setOrganizationName("Memo");
+    QGuiApplication::setApplicationVersion("0.1.0");
 
     QGuiApplication app(argc, argv);
 
