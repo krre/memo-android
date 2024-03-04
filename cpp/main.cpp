@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 #include <QIcon>
+#include <QTranslator>
 
 int main(int argc, char* argv[]) {
     QGuiApplication::setApplicationName("Memo");
@@ -11,6 +12,13 @@ int main(int argc, char* argv[]) {
 
     QIcon::setThemeName("memo-qml");
     QQuickStyle::setStyle("Material");
+
+    auto memoTranslator = new QTranslator(&app);
+    QString language = QLocale::system().name().split("_").first();
+
+    if (memoTranslator->load("memo-" + language, ":/i18n")) {
+        app.installTranslator(memoTranslator);
+    }
 
     QQmlApplicationEngine engine;
     engine.load(QUrl("qrc:/qml/Main.qml"));
