@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 
     QGuiApplication app(argc, argv);
 
-    QIcon::setThemeName("memo-qml");
+    QIcon::setThemeName("memo");
     QQuickStyle::setStyle("Material");
 
     auto memoTranslator = new QTranslator(&app);

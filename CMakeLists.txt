@@ -14,7 +14,7 @@ qt_add_executable(memo
 )
 
 qt_add_qml_module(memo
-    URI memo-qml
+    URI memoqml
     NO_RESOURCE_TARGET_PATH
     QML_FILES
         "qml/Main.qml"
