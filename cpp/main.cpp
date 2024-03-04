@@ -3,11 +3,12 @@
 #include <QQuickStyle>
 #include <QIcon>
 #include <QTranslator>
+#include "config.h"
 
 int main(int argc, char* argv[]) {
     QGuiApplication::setApplicationName("Memo");
     QGuiApplication::setOrganizationName("Memo");
-    QGuiApplication::setApplicationVersion("0.1.0");
+    QGuiApplication::setApplicationVersion(PROJECT_VERSION);
 
     QGuiApplication app(argc, argv);
 

@@ -1,12 +1,16 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(memo VERSION 0.1 LANGUAGES CXX)
+project(memo VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 
 qt_standard_project_setup(REQUIRES 6.6)
+
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+configure_file(cpp/config.h.in config.h @ONLY)
 
 qt_add_executable(memo
     cpp/main.cpp
@@ -48,6 +52,7 @@ qt_add_translations(memo TS_FILES ${TS_SOURCE})
 add_custom_target(other
     SOURCES
     README.md
+    cpp/config.h.in
     ${TS_SOURCE}
 )
 
