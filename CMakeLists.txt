@@ -9,7 +9,6 @@ find_package(Qt6 6.6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 qt_standard_project_setup(REQUIRES 6.6)
 
 qt_add_executable(memo
-    i18n/memo-ru.ts
     cpp/main.cpp
 )
 
