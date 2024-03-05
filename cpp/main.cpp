@@ -1,4 +1,5 @@
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQuickStyle>
 #include <QIcon>
 #include "core/Application.h"
@@ -10,6 +11,7 @@ int main(int argc, char* argv[]) {
     QQuickStyle::setStyle("Material");
 
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty("app", &app);
     engine.load(QUrl("qrc:/qml/Main.qml"));
 
     if (engine.rootObjects().isEmpty()) {

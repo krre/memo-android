@@ -64,6 +64,10 @@
     <message>
         <location line="+27"/>
         <location/>
+        <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;                         Note-taking for quick notes&lt;br&gt;&lt;br&gt;                         Based on Qt %3&lt;br&gt;                         Build on %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
+        <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
+    </message>
+    <message>
         <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Note-taking for quick notes</source>
         <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок</translation>
     </message>
