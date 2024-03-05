@@ -42,6 +42,7 @@ qt_add_qml_module(memo
         "icons/memo/index.theme"
         "qmldir"
         "qtquickcontrols2.conf"
+    SOURCES cpp/core/Application.h cpp/core/Application.cpp
 )
 
 SET(TS_SOURCE i18n/memo-ru.ts)
