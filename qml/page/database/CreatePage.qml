@@ -2,15 +2,10 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
-import Memo 1.0
 import ".."
 
 NamePage {
     name: qsTr("Create Database")
-
-    Database {
-        id: database
-    }
 
     MessageDialog {
         id: overwriteDialog

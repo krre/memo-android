@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import Memo 1.0
 import "page/database"
 
 ApplicationWindow {
@@ -125,6 +126,10 @@ ApplicationWindow {
 
             onLinkActivated: (link) => Qt.openUrlExternally(link)
         }
+    }
+
+    Database {
+        id: database
     }
 
     StackView {

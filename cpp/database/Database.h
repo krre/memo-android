@@ -11,6 +11,7 @@ public:
     Q_INVOKABLE void create(const QString& name);
     Q_INVOKABLE void open(const QString& name);
     Q_INVOKABLE bool isExists(const QString& name);
+    Q_INVOKABLE QStringList list() const;
 
     QSqlQuery exec(const QString& sql, const QVariantMap& params = QVariantMap()) const;
     const QSqlDatabase& db() const { return m_db; }

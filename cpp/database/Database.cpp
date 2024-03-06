@@ -33,6 +33,17 @@ bool Database::isExists(const QString& name) {
     return QFileInfo::exists(filePath(name));
 }
 
+QStringList Database::list() const {
+    QStringList result;
+    QDir dir(directory());
+
+    for (const auto& fi : dir.entryInfoList({ "*.db" }, QDir::Files)) {
+        result.append(fi.fileName());
+    }
+
+    return result;
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);
