@@ -27,6 +27,7 @@ NamePage {
             id: name
             Layout.preferredWidth: parent.width
             placeholderText: qsTr("Name")
+            focus: true
         }
 
         Button {
