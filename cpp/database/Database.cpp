@@ -65,5 +65,5 @@ QString Database::directory() const {
 }
 
 QString Database::filePath(const QString& name) const {
-    return directory() + "/" + name + ".db";
+    return directory() + "/" + name + (name.right(3) == ".db" ? "" : ".db");
 }
