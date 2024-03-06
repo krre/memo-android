@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Dialogs
 import Memo 1.0
 import ".."
 
@@ -9,6 +10,18 @@ NamePage {
 
     Database {
         id: database
+    }
+
+    MessageDialog {
+        id: overwriteDialog
+        text: qsTr("File already exists")
+        informativeText: qsTr("Do you want to overwrite it?")
+        buttons: MessageDialog.Yes | MessageDialog.No
+        onButtonClicked: function (button, role) {
+            if (button === MessageDialog.Yes) {
+                database.create(name.text)
+            }
+        }
     }
 
     ColumnLayout {
@@ -25,7 +38,13 @@ NamePage {
             Layout.alignment: Qt.AlignRight
             text: qsTr("OK")
             enabled: name.text
-            onClicked: database.create(name.text)
+            onClicked: {
+                if (database.isExists(name.text)) {
+                    overwriteDialog.open()
+                } else {
+                    database.create(name.text)
+                }
+            }
         }
     }
 }
