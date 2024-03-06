@@ -3,12 +3,15 @@
 #include <QQuickStyle>
 #include <QIcon>
 #include "core/Application.h"
+#include "database/Database.h"
 
 int main(int argc, char* argv[]) {
     Application app(argc, argv);
 
     QIcon::setThemeName("memo");
     QQuickStyle::setStyle("Material");
+
+    qmlRegisterType<Database>("Memo", 1, 0, "Database");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("app", &app);

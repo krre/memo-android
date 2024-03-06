@@ -4,7 +4,7 @@ project(memo VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
+find_package(Qt6 6.6 REQUIRED COMPONENTS Quick QuickControls2 Sql LinguistTools)
 
 qt_standard_project_setup(REQUIRES 6.6)
 
@@ -43,6 +43,7 @@ qt_add_qml_module(memo
         "qmldir"
         "qtquickcontrols2.conf"
     SOURCES cpp/core/Application.h cpp/core/Application.cpp
+    SOURCES cpp/database/Database.h cpp/database/Database.cpp
 )
 
 SET(TS_SOURCE i18n/memo-ru.ts)
@@ -72,6 +73,7 @@ set_target_properties(memo PROPERTIES
 target_link_libraries(memo PRIVATE
     Qt6::Quick
     Qt6::QuickControls2
+    Qt6::Sql
 )
 
 include(GNUInstallDirs)
