@@ -10,22 +10,26 @@
         <translation>Подключиться к базе данных</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
+        <location/>
         <source>IP address</source>
         <translation>IP адрес</translation>
     </message>
     <message>
         <location line="+7"/>
+        <location/>
         <source>Port</source>
         <translation>Порт</translation>
     </message>
     <message>
         <location line="+6"/>
+        <location/>
         <source>Token</source>
         <translation>Токен</translation>
     </message>
     <message>
         <location line="+5"/>
+        <location/>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
@@ -33,13 +37,13 @@
 <context>
     <name>CreatePage</name>
     <message>
-        <location filename="../qml/page/database/CreatePage.qml" line="+8"/>
+        <location filename="../qml/page/database/CreatePage.qml" line="+9"/>
         <location/>
         <source>Create Database</source>
         <translation>Создать базу данных</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+9"/>
         <location/>
         <source>File already exists</source>
         <translation>Файл уже существует</translation>
@@ -93,20 +97,25 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+43"/>
-        <location line="+72"/>
+        <location filename="../qml/Main.qml" line="+44"/>
+        <location line="+80"/>
         <location/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-27"/>
+        <source>Database</source>
+        <translation>База данных</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <location/>
         <source>Exit</source>
         <translation>Выйти</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+29"/>
         <location/>
         <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;                         Note-taking for quick notes&lt;br&gt;&lt;br&gt;                         Based on Qt %3&lt;br&gt;                         Build on %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
         <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>

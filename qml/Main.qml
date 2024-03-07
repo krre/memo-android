@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Memo 1.0
 import "page/database"
+import "page/view"
 
 ApplicationWindow {
     width: 400
@@ -25,7 +26,7 @@ ApplicationWindow {
 
             Label {
                 id: title
-                text: stackView.currentItem.name
+                text: stackView.currentItem && stackView.currentItem.name
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
@@ -46,6 +47,11 @@ ApplicationWindow {
                 }
             }
         }
+    }
+
+    function openNodeTreeView() {
+        stackView.clear()
+        stackView.push(noteTreeViewComp)
     }
 
     Shortcut {
@@ -88,6 +94,7 @@ ApplicationWindow {
             anchors.fill: parent
 
             model: ListModel {
+                ListElement { title: qsTr("Database") }
                 ListElement { title: qsTr("Exit") }
             }
 
@@ -97,7 +104,9 @@ ApplicationWindow {
                 text: title
 
                 onClicked: {
-                    if (index == 0) {
+                    if (index == 0 && !stackView.currentItem.isInitialPage) {
+                        stackView.push(databasePageComp)
+                    } else if (index == 1) {
                         Qt.quit()
                     }
 
@@ -132,9 +141,19 @@ ApplicationWindow {
         id: database
     }
 
+    Component {
+        id: databasePageComp
+        DatabasePage {}
+    }
+
+    Component {
+        id: noteTreeViewComp
+        NoteTreeView {}
+    }
+
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: DatabasePage {}
+        initialItem: databasePageComp
     }
 }

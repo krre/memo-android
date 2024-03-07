@@ -34,7 +34,7 @@ NamePage {
             Layout.alignment: Qt.AlignRight
             text: qsTr("OK")
             enabled: ip.text && port.text && token.text
-            onClicked: {}
+            onClicked: openNodeTreeView()
         }
     }
 }

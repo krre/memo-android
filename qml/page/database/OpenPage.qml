@@ -11,7 +11,10 @@ NamePage {
         delegate: ItemDelegate {
             width: ListView.view.width
             text: modelData
-            onClicked: database.open(modelData)
+            onClicked: {
+                database.open(modelData)
+                openNodeTreeView()
+            }
         }
     }
 }

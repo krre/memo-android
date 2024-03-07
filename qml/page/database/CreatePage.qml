@@ -2,10 +2,16 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import "../view"
 import ".."
 
 NamePage {
     name: qsTr("Create Database")
+
+    function create(name) {
+        database.create(name)
+        openNodeTreeView()
+    }
 
     MessageDialog {
         id: overwriteDialog
@@ -14,7 +20,7 @@ NamePage {
         buttons: MessageDialog.Yes | MessageDialog.No
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.Yes) {
-                database.create(name.text)
+                create(name.text)
             }
         }
     }
@@ -38,7 +44,7 @@ NamePage {
                 if (database.isExists(name.text)) {
                     overwriteDialog.open()
                 } else {
-                    database.create(name.text)
+                    create(name.text)
                 }
             }
         }
