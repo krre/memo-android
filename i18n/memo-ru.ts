@@ -4,10 +4,30 @@
 <context>
     <name>ConnectPage</name>
     <message>
-        <location filename="../qml/page/database/ConnectPage.qml" line="+4"/>
+        <location filename="../qml/page/database/ConnectPage.qml" line="+7"/>
         <location/>
         <source>Connect to Database</source>
         <translation>Подключиться к базе данных</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>IP address</source>
+        <translation>IP адрес</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Port</source>
+        <translation>Порт</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Token</source>
+        <translation>Токен</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>OK</source>
+        <translation>ОК</translation>
     </message>
 </context>
 <context>
@@ -20,21 +40,25 @@
     </message>
     <message>
         <location line="+4"/>
+        <location/>
         <source>File already exists</source>
         <translation>Файл уже существует</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location/>
         <source>Do you want to overwrite it?</source>
         <translation>Вы желаете его перезаписать?</translation>
     </message>
     <message>
         <location line="+16"/>
+        <location/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
     <message>
         <location line="+6"/>
+        <location/>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
