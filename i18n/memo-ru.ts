@@ -13,10 +13,30 @@
 <context>
     <name>CreatePage</name>
     <message>
-        <location filename="../qml/page/database/CreatePage.qml" line="+4"/>
+        <location filename="../qml/page/database/CreatePage.qml" line="+8"/>
         <location/>
         <source>Create Database</source>
         <translation>Создать базу данных</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>File already exists</source>
+        <translation>Файл уже существует</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Do you want to overwrite it?</source>
+        <translation>Вы желаете его перезаписать?</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>OK</source>
+        <translation>ОК</translation>
     </message>
 </context>
 <context>
@@ -49,7 +69,7 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+42"/>
+        <location filename="../qml/Main.qml" line="+43"/>
         <location line="+72"/>
         <location/>
         <source>About</source>
@@ -75,7 +95,7 @@
 <context>
     <name>OpenPage</name>
     <message>
-        <location filename="../qml/page/database/OpenPage.qml" line="+4"/>
+        <location filename="../qml/page/database/OpenPage.qml" line="+6"/>
         <location/>
         <source>Open Database</source>
         <translation>Открыть базу данных</translation>
