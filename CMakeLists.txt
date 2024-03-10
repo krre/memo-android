@@ -19,33 +19,31 @@ qt_add_executable(memo
 qt_add_qml_module(memo
     URI memoqml
     NO_RESOURCE_TARGET_PATH
-    QML_FILES
-        "qml/Main.qml"
-        "qml/page/database/CreatePage.qml"
-        "qml/page/database/OpenPage.qml"
-        "qml/page/database/ConnectPage.qml"
-        "qml/page/NamePage.qml"
-        "qml/page/database/DatabasePage.qml"
-    RESOURCES
-        "icons/memo/20x20/back.png"
-        "icons/memo/20x20/drawer.png"
-        "icons/memo/20x20/menu.png"
-        "icons/memo/20x20@2/back.png"
-        "icons/memo/20x20@2/drawer.png"
-        "icons/memo/20x20@2/menu.png"
-        "icons/memo/20x20@3/back.png"
-        "icons/memo/20x20@3/drawer.png"
-        "icons/memo/20x20@3/menu.png"
-        "icons/memo/20x20@4/back.png"
-        "icons/memo/20x20@4/drawer.png"
-        "icons/memo/20x20@4/menu.png"
-        "icons/memo/index.theme"
-        "qmldir"
-        "qtquickcontrols2.conf"
+    QML_FILES qml/Main.qml
+        qml/page/database/CreatePage.qml
+        qml/page/database/OpenPage.qml
+        qml/page/database/ConnectPage.qml
+        qml/page/NamePage.qml
+        qml/page/database/DatabasePage.qml
+        qml/page/view/NoteTreeView.qml
+    RESOURCES icons/memo/20x20/back.png
+        icons/memo/20x20/drawer.png
+        icons/memo/20x20/menu.png
+        icons/memo/20x20@2/back.png
+        icons/memo/20x20@2/drawer.png
+        icons/memo/20x20@2/menu.png
+        icons/memo/20x20@3/back.png
+        icons/memo/20x20@3/drawer.png
+        icons/memo/20x20@3/menu.png
+        icons/memo/20x20@4/back.png
+        icons/memo/20x20@4/drawer.png
+        icons/memo/20x20@4/menu.png
+        icons/memo/index.theme
+        qmldir
+        qtquickcontrols2.conf
     SOURCES cpp/core/Application.h cpp/core/Application.cpp
-    SOURCES cpp/database/Database.h cpp/database/Database.cpp
-    SOURCES cpp/database/Migrater.h cpp/database/Migrater.cpp
-    QML_FILES qml/page/view/NoteTreeView.qml
+        cpp/database/Database.h cpp/database/Database.cpp
+        cpp/database/Migrater.h cpp/database/Migrater.cpp
 )
 
 SET(TS_SOURCE i18n/memo-ru.ts)
