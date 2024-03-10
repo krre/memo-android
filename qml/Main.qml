@@ -1,3 +1,4 @@
+import QtCore
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -14,7 +15,14 @@ ApplicationWindow {
     Component.onCompleted: {
         x = (Screen.desktopAvailableWidth - width) /2
         y = (Screen.desktopAvailableHeight - height) /2
+
+        if (settings.name) {
+            database.open(settings.name)
+            openNodeTreeView()
+        }
     }
+
+    Component.onDestruction: settings.name = database.name
 
     header: ToolBar {
         RowLayout {
@@ -52,6 +60,11 @@ ApplicationWindow {
     function openNodeTreeView() {
         stackView.clear()
         stackView.push(noteTreeViewComp)
+    }
+
+    Settings {
+        id: settings
+        property string name
     }
 
     Shortcut {

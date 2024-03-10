@@ -3,7 +3,7 @@ import QtQuick.Controls
 import ".."
 
 NamePage {
-    name: database.name()
+    name: database.name
 
     TreeView {
         anchors.fill: parent

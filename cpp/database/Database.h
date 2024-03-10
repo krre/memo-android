@@ -5,6 +5,7 @@
 
 class Database : public QObject {
     Q_OBJECT
+    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
 public:
     Database(QObject* parent = nullptr);
 
@@ -12,10 +13,14 @@ public:
     Q_INVOKABLE void open(const QString& name);
     Q_INVOKABLE bool isExists(const QString& name);
     Q_INVOKABLE QStringList list() const;
-    Q_INVOKABLE QString name() const;
+
+    QString name() const;
 
     QSqlQuery exec(const QString& sql, const QVariantMap& params = QVariantMap()) const;
     const QSqlDatabase& db() const { return m_db; }
+
+signals:
+    void nameChanged(const QString& name);
 
 private:
     QString directory() const;

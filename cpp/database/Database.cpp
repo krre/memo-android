@@ -15,6 +15,8 @@ void Database::create(const QString& name) {
 }
 
 void Database::open(const QString& name) {
+    if (name == m_name) return;
+
     m_db.close();
     m_db.setDatabaseName(filePath(name));
 
@@ -27,6 +29,7 @@ void Database::open(const QString& name) {
     migrater.run();
 
     m_name = normalizeName(name);
+    emit nameChanged(m_name);
     qInfo().noquote() << "Opened database:" << filePath(name);
 }
 
