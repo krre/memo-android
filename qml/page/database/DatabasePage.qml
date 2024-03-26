@@ -12,6 +12,7 @@ NamePage {
 
         Button {
             text: qsTr("Create")
+            Layout.fillWidth: true
             onClicked: pushPage(createPageComp)
 
             Component {
@@ -22,6 +23,7 @@ NamePage {
 
         Button {
             text: qsTr("Open")
+            Layout.fillWidth: true
             onClicked: pushPage(openPageComp)
 
             Component {
@@ -32,6 +34,7 @@ NamePage {
 
         Button {
             text: qsTr("Connect")
+            Layout.fillWidth: true
             onClicked: pushPage(connectPageComp)
 
             Component {
