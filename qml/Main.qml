@@ -40,6 +40,10 @@ ApplicationWindow {
                 Layout.fillWidth: true
             }
 
+            Row {
+                data: stackView.currentItem ? stackView.currentItem.buttons : []
+            }
+
             ToolButton {
                 action: optionsMenuAction
 

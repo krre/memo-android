@@ -83,18 +83,18 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+52"/>
-        <location line="+90"/>
+        <location filename="../qml/Main.qml" line="+56"/>
+        <location line="+95"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-33"/>
         <source>Database</source>
         <translation>База данных</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+11"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -111,6 +111,19 @@
     <message>
         <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Note-taking for quick notes</source>
         <translation type="vanished">&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок</translation>
+    </message>
+</context>
+<context>
+    <name>NoteTreeView</name>
+    <message>
+        <location filename="../qml/page/view/NoteTreeView.qml" line="+22"/>
+        <source>Add Note</source>
+        <translation>Добавить заметку</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Name</source>
+        <translation>Название</translation>
     </message>
 </context>
 <context>
