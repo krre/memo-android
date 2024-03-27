@@ -33,6 +33,13 @@ void Database::open(const QString& name) {
     qInfo().noquote() << "Database opened:" << filePath(name);
 }
 
+void Database::close() {
+    m_db.close();
+    QString name = m_name;
+    setName("");
+    qInfo().noquote() << "Database closed:" << filePath(name);
+}
+
 bool Database::isExists(const QString& name) {
     return QFileInfo::exists(filePath(name));
 }

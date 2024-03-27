@@ -116,6 +116,18 @@ ApplicationWindow {
 
             ItemDelegate {
                 width: parent.width
+                visible: database.name
+                text: qsTr("Close")
+                onClicked: {
+                    database.close()
+                    stackView.clear()
+                    stackView.push(stackView.initialItem)
+                    drawer.close()
+                }
+            }
+
+            ItemDelegate {
+                width: parent.width
                 text: qsTr("Exit")
                 onClicked: Qt.quit()
             }
