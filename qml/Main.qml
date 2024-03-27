@@ -96,6 +96,12 @@ ApplicationWindow {
         onTriggered: optionsMenu.open()
     }
 
+    Action {
+        id: quitAction
+        shortcut: "Ctrl+Q"
+        onTriggered: Qt.quit()
+    }
+
     Drawer {
         id: drawer
         height: parent.height
@@ -128,7 +134,7 @@ ApplicationWindow {
             ItemDelegate {
                 width: parent.width
                 text: qsTr("Exit")
-                onClicked: Qt.quit()
+                onClicked: quitAction.trigger()
             }
         }
     }
