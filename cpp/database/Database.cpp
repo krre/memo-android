@@ -28,8 +28,8 @@ void Database::open(const QString& name) {
     Migrater migrater(this);
     migrater.run();
 
-    m_name = normalizeName(name);
-    emit nameChanged(m_name);
+    setName(normalizeName(name));
+
     qInfo().noquote() << "Database opened:" << filePath(name);
 }
 
@@ -66,6 +66,12 @@ QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     }
 
     return query;
+}
+
+void Database::setName(const QString& name) {
+    if (name == m_name) return;
+    m_name = name;
+    emit nameChanged(name);
 }
 
 QString Database::directory() const {

@@ -23,6 +23,8 @@ signals:
     void nameChanged(const QString& name);
 
 private:
+    void setName(const QString& name);
+
     QString directory() const;
     QString filePath(const QString& name) const;
     QString normalizeName(const QString& name) const;
