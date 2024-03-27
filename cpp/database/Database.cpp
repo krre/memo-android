@@ -30,7 +30,7 @@ void Database::open(const QString& name) {
 
     m_name = normalizeName(name);
     emit nameChanged(m_name);
-    qInfo().noquote() << "Opened database:" << filePath(name);
+    qInfo().noquote() << "Database opened:" << filePath(name);
 }
 
 bool Database::isExists(const QString& name) {
