@@ -100,31 +100,24 @@ ApplicationWindow {
         id: drawer
         height: parent.height
 
-        ListView {
-            id: listView
-            focus: true
-            currentIndex: -1
+        Column {
             anchors.fill: parent
 
-            model: ListModel {
-                ListElement { title: qsTr("Database") }
-                ListElement { title: qsTr("Exit") }
+            ItemDelegate {
+                width: parent.width
+                text: qsTr("Database")
+                onClicked: {
+                    if (!stackView.currentItem.isInitialPage) {
+                        stackView.push(databasePageComp)
+                        drawer.close()
+                    }
+                }
             }
 
-            delegate: ItemDelegate {
-                id: delegateItem
-                width: ListView.view.width
-                text: title
-
-                onClicked: {
-                    if (index == 0 && !stackView.currentItem.isInitialPage) {
-                        stackView.push(databasePageComp)
-                    } else if (index == 1) {
-                        Qt.quit()
-                    }
-
-                    drawer.close()
-                }
+            ItemDelegate {
+                width: parent.width
+                text: qsTr("Exit")
+                onClicked: Qt.quit()
             }
         }
     }
