@@ -4,6 +4,7 @@
 #include <QIcon>
 #include "core/Application.h"
 #include "database/Database.h"
+#include "treeview/TreeModel.h"
 
 int main(int argc, char* argv[]) {
     Application app(argc, argv);
@@ -12,6 +13,7 @@ int main(int argc, char* argv[]) {
     QQuickStyle::setStyle("Material");
 
     qmlRegisterType<Database>("Memo", 1, 0, "Database");
+    qmlRegisterType<TreeModel>("Memo", 1, 0, "TreeModel");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("app", &app);

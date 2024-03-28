@@ -1,5 +1,7 @@
 import QtQuick
 import QtQuick.Controls
+import QtQml.Models
+import Memo 1.0
 import ".."
 
 NamePage {
@@ -28,7 +30,6 @@ NamePage {
 
         onAccepted: {
             if (!name.text) return
-            print(name.text)
         }
 
         TextField {
@@ -37,5 +38,15 @@ NamePage {
             placeholderText: qsTr("Name")
             width: parent.width
         }
+    }
+
+    TreeModel {
+        id: treeModel
+    }
+
+    TreeView {
+        id: treeView
+        anchors.fill: parent
+        model: treeModel
     }
 }
