@@ -14,7 +14,11 @@ NamePage {
 
         ToolButton {
             text: "Add"
-            onClicked: nameDialog.open()
+            onClicked: {
+                nameDialog.open()
+                name.clear()
+                name.forceActiveFocus()
+            }
         }
     }
 
@@ -34,7 +38,6 @@ NamePage {
 
         TextField {
             id: name
-            focus: true
             placeholderText: qsTr("Name")
             width: parent.width
         }
