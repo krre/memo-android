@@ -10,10 +10,17 @@ NamePage {
     buttons: [ addButtonComp.createObject() ]
 
     function addNote(title) {
-        treeModel.insertRow(0)
+        const currentIndex = treeView.selectionModel.currentIndex
+        treeModel.insertRow(0, currentIndex)
 
-        let child = treeModel.index(0, 0)
-        treeModel.setData(child, title);
+        const childIndex = treeModel.index(0, 0, currentIndex)
+        treeModel.setData(childIndex, title)
+
+        treeView.selectionModel.setCurrentIndex(childIndex, ItemSelectionModel.ClearAndSelect)
+
+        treeView.expandToIndex(childIndex)
+        treeView.forceLayout()
+        treeView.positionViewAtRow(treeView.rowAtIndex(childIndex), Qt.AlignVCenter)
     }
 
     Component {
