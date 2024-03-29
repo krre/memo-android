@@ -9,6 +9,13 @@ NamePage {
     name: database.name
     buttons: [ addButtonComp.createObject() ]
 
+    function addNote(title) {
+        treeModel.insertRow(0)
+
+        let child = treeModel.index(0, 0)
+        treeModel.setData(child, title);
+    }
+
     Component {
         id: addButtonComp
 
@@ -33,7 +40,9 @@ NamePage {
         standardButtons: Dialog.Ok | Dialog.Cancel
 
         onAccepted: {
-            if (!name.text) return
+            if (name.text) {
+                addNote(name.text)
+            }
         }
 
         TextField {
@@ -51,5 +60,20 @@ NamePage {
         id: treeView
         anchors.fill: parent
         model: treeModel
+        selectionModel: ItemSelectionModel {}
+        delegate: TreeViewDelegate {}
+    }
+
+    MouseArea {
+        anchors.fill: parent
+
+        onPressed: (mouse) => {
+            mouse.accepted = false
+            const pos = treeView.cellAtPosition(mouseX, mouseY)
+
+            if (pos.x === -1 && pos.y === - 1) {
+                treeView.selectionModel.clearCurrentIndex()
+            }
+        }
     }
 }
