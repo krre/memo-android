@@ -31,7 +31,7 @@ public:
     bool moveRows(const QModelIndex& sourceParent, int sourceRow, int count, const QModelIndex& destinationParent, int destinationChild) override;
 
     TreeItem* root() const;
-    TreeItem* item(const QModelIndex& index) const;
+    Q_INVOKABLE TreeItem* item(const QModelIndex& index) const;
     QModelIndex index(TreeItem* item) const;
     Ids childIds(TreeItem* item) const;
 

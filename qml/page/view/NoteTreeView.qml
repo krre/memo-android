@@ -11,9 +11,12 @@ NamePage {
 
     function addNote(title) {
         const currentIndex = treeView.selectionModel.currentIndex
-        treeModel.insertRow(0, currentIndex)
+        const currentItem = treeModel.item(currentIndex)
+        const pos = currentItem.childCount()
 
-        const childIndex = treeModel.index(0, 0, currentIndex)
+        treeModel.insertRow(pos, currentIndex)
+
+        const childIndex = treeModel.index(pos, 0, currentIndex)
         treeModel.setData(childIndex, title)
 
         treeView.selectionModel.setCurrentIndex(childIndex, ItemSelectionModel.ClearAndSelect)

@@ -1,8 +1,9 @@
 #pragma once
-#include <QList>
+#include <QObject>
 #include <QVariant>
 
-class TreeItem {
+class TreeItem : public QObject {
+    Q_OBJECT
 public:
     explicit TreeItem(TreeItem* parent = nullptr);
     ~TreeItem();
@@ -13,7 +14,7 @@ public:
     TreeItem* find(int id);
 
     TreeItem* child(int number) const;
-    int childCount() const;
+    Q_INVOKABLE int childCount() const;
     int childNumber() const;
 
     QVariant data() const;
