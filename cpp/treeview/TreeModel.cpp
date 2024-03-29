@@ -64,9 +64,7 @@ bool TreeModel::setData(const QModelIndex& index, const QVariant& value, int rol
     }
 
     item(index)->setData(value);
-
     emit dataChanged(index, index);
-
     return true;
 }
 
