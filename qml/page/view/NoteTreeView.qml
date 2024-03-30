@@ -71,7 +71,39 @@ NamePage {
         anchors.fill: parent
         model: treeModel
         selectionModel: ItemSelectionModel {}
-        delegate: TreeViewDelegate {}
+        delegate: TreeViewDelegate {
+            id: delegate
+
+            // Android case for production.
+            onPressAndHold: contextMenu.open()
+
+            // Desktop case for developing.
+            TapHandler {
+                acceptedButtons: Qt.RightButton
+                onSingleTapped: (eventPoint, button) => {
+                    if (button !== Qt.RightButton) return
+
+                    const rootPos = delegate.mapToItem(root, eventPoint.position)
+
+                    contextMenu.x = rootPos.x
+                    contextMenu.y = rootPos.y
+
+                    contextMenu.open()
+                }
+            }
+        }
+
+        Menu {
+            id: contextMenu
+
+            MenuItem {
+                text: qsTr("Rename")
+            }
+
+            MenuItem {
+                text: qsTr("Remove")
+            }
+        }
     }
 
     MouseArea {
@@ -79,10 +111,16 @@ NamePage {
 
         onPressed: (mouse) => {
             mouse.accepted = false
-            const pos = treeView.cellAtPosition(mouseX, mouseY)
+            const cell = treeView.cellAtPosition(mouseX, mouseY)
 
-            if (pos.x === -1 && pos.y === - 1) {
+            if (cell.x === -1 && cell.y === - 1) {
                 treeView.selectionModel.clearCurrentIndex()
+            } else {
+                const index = treeView.modelIndex(cell)
+                treeView.selectionModel.setCurrentIndex(index, ItemSelectionModel.ClearAndSelect)
+
+                contextMenu.x = mouseX
+                contextMenu.y = mouseY
             }
         }
     }
