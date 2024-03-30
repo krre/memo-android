@@ -98,6 +98,7 @@ NamePage {
 
             MenuItem {
                 text: qsTr("Rename")
+                onClicked:  treeView.edit(treeView.selectionModel.currentIndex)
             }
 
             MenuItem {
