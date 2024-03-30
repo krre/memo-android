@@ -83,7 +83,7 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+56"/>
+        <location filename="../qml/Main.qml" line="+58"/>
         <location line="+95"/>
         <source>About</source>
         <translation>О программе</translation>
@@ -116,7 +116,7 @@
 <context>
     <name>NoteTreeView</name>
     <message>
-        <location filename="../qml/page/view/NoteTreeView.qml" line="+44"/>
+        <location filename="../qml/page/view/NoteTreeView.qml" line="+45"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -126,12 +126,17 @@
         <translation>Название</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+7"/>
+        <source>Do you want to remove note?</source>
+        <translation>Вы желаете удалить заметку?</translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>

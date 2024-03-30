@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQml.Models
+ import QtQuick.Dialogs
 import Memo 1.0
 import ".."
 
@@ -62,6 +63,18 @@ NamePage {
         }
     }
 
+    MessageDialog {
+        id: removeDialog
+        text: qsTr("Do you want to remove note?")
+        buttons: MessageDialog.Yes | MessageDialog.No
+
+        onButtonClicked: function (button, role) {
+            if (button === MessageDialog.No) return
+            const index = treeView.selectionModel.currentIndex
+            treeModel.removeRow(index.row, index.parent)
+         }
+    }
+
     TreeModel {
         id: treeModel
     }
@@ -103,6 +116,7 @@ NamePage {
 
             MenuItem {
                 text: qsTr("Remove")
+                onClicked: removeDialog.open()
             }
         }
     }
