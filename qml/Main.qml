@@ -19,6 +19,8 @@ ApplicationWindow {
         if (settings.name) {
             database.open(settings.name)
             openNodeTreeView()
+        } else {
+            stackView.push(databasePageComp)
         }
     }
 
@@ -130,7 +132,7 @@ ApplicationWindow {
                 onClicked: {
                     database.close()
                     stackView.clear()
-                    stackView.push(stackView.initialItem)
+                    stackView.push(databasePageComp)
                     drawer.close()
                 }
             }
@@ -181,6 +183,5 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: databasePageComp
     }
 }
