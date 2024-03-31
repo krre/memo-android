@@ -13,18 +13,23 @@ NamePage {
     function addNote(title) {
         const currentIndex = treeView.selectionModel.currentIndex
         const currentItem = treeModel.item(currentIndex)
+        const currentId = currentItem.id()
         const pos = currentItem.childCount()
+        const depth = currentItem.depth();
+        const noteId = database.insertNote(currentId, pos, depth, title);
 
-        treeModel.insertRow(pos, currentIndex)
+        if (!treeModel.insertRow(pos, currentIndex)) {
+            return
+        }
 
-        const childIndex = treeModel.index(pos, 0, currentIndex)
-        treeModel.setData(childIndex, title)
+        const noteIndex = treeModel.index(pos, 0, currentIndex)
+        treeModel.setData(noteIndex, title)
 
-        treeView.selectionModel.setCurrentIndex(childIndex, ItemSelectionModel.ClearAndSelect)
+        treeView.selectionModel.setCurrentIndex(noteIndex, ItemSelectionModel.ClearAndSelect)
 
-        treeView.expandToIndex(childIndex)
+        treeView.expandToIndex(noteIndex)
         treeView.forceLayout()
-        treeView.positionViewAtRow(treeView.rowAtIndex(childIndex), Qt.AlignVCenter)
+        treeView.positionViewAtRow(treeView.rowAtIndex(noteIndex), Qt.AlignVCenter)
     }
 
     Component {
@@ -33,9 +38,9 @@ NamePage {
         ToolButton {
             text: "Add"
             onClicked: {
-                nameDialog.open()
                 name.clear()
                 name.forceActiveFocus()
+                nameDialog.open()
             }
         }
     }

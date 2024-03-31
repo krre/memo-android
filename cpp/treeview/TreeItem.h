@@ -23,10 +23,10 @@ public:
     bool insertChild(int position, TreeItem* item = nullptr);
     bool removeChild(int position);
 
-    int id() const;
+    Q_INVOKABLE int id() const;
     void setId(int id);
 
-    int depth();
+    Q_INVOKABLE int depth();
 
 private:
     QList<TreeItem*> m_children;

@@ -59,6 +59,18 @@ QString Database::name() const {
     return m_name;
 }
 
+int Database::insertNote(int parentId, int pos, int depth, const QString& title) const {
+    QVariantMap params = {
+        { "parent_id", parentId },
+        { "pos", pos },
+        { "depth", depth },
+        { "title", title }
+    };
+
+    QSqlQuery query = exec("INSERT INTO notes (parent_id, pos, depth, title) VALUES (:parent_id, :pos, :depth, :title)", params);
+    return query.lastInsertId().toLongLong();
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);
