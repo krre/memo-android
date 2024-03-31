@@ -17,7 +17,7 @@ public:
     Q_INVOKABLE int childCount() const;
     int childNumber() const;
 
-    QVariant data() const;
+    Q_INVOKABLE QVariant data() const;
     void setData(const QVariant& data);
 
     bool insertChild(int position, TreeItem* item = nullptr);

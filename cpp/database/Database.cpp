@@ -82,6 +82,16 @@ QVariantList Database::notes() const {
     return result;
 }
 
+void Database::updateNoteValue(int id, const QString& name, const QVariant& value) const {
+    QVariantMap params = {
+        { "id", id },
+        { "value", value },
+    };
+
+    QString updateDate = name == "note" ? ", updated_at = datetime('now', 'localtime')" : "";
+    exec(QString("UPDATE notes SET %1 = :value %2 WHERE id = :id").arg(name, updateDate), params);
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);

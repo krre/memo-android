@@ -112,6 +112,12 @@ NamePage {
             // Android case for production.
             onPressAndHold: contextMenu.open()
 
+            onEditingChanged: {
+                if (editing) return
+                const item = treeModel.item(treeView.selectionModel.currentIndex)
+                database.updateNoteValue(item.id(), "title", item.data())
+            }
+
             // Desktop case for developing.
             TapHandler {
                 acceptedButtons: Qt.RightButton
