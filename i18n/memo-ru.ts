@@ -114,9 +114,9 @@
     </message>
 </context>
 <context>
-    <name>NoteTreeView</name>
+    <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/page/view/NoteTreeView.qml" line="+45"/>
+        <location filename="../qml/page/view/NoteTreePage.qml" line="+67"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -131,7 +131,7 @@
         <translation>Вы желаете удалить заметку?</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+64"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
@@ -139,6 +139,29 @@
         <location line="+5"/>
         <source>Remove</source>
         <translation>Удалить</translation>
+    </message>
+</context>
+<context>
+    <name>NoteTreeView</name>
+    <message>
+        <source>Add Note</source>
+        <translation type="vanished">Добавить заметку</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="vanished">Название</translation>
+    </message>
+    <message>
+        <source>Do you want to remove note?</source>
+        <translation type="vanished">Вы желаете удалить заметку?</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="vanished">Переименовать</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="vanished">Удалить</translation>
     </message>
 </context>
 <context>

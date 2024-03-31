@@ -25,7 +25,7 @@ qt_add_qml_module(memo
         qml/page/database/ConnectPage.qml
         qml/page/NamePage.qml
         qml/page/database/DatabasePage.qml
-        qml/page/view/NoteTreeView.qml
+        qml/page/view/NoteTreePage.qml
     RESOURCES icons/memo/20x20/back.png
         icons/memo/20x20/drawer.png
         icons/memo/20x20/menu.png

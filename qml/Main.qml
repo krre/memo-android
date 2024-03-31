@@ -65,7 +65,7 @@ ApplicationWindow {
 
     function openNodeTreeView() {
         stackView.clear()
-        stackView.push(noteTreeViewComp)
+        stackView.push(noteTreePageComp)
     }
 
     Settings {
@@ -176,8 +176,8 @@ ApplicationWindow {
     }
 
     Component {
-        id: noteTreeViewComp
-        NoteTreeView {}
+        id: noteTreePageComp
+        NoteTreePage {}
     }
 
     StackView {
