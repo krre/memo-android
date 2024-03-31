@@ -116,7 +116,7 @@
 <context>
     <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/page/view/NoteTreePage.qml" line="+67"/>
+        <location filename="../qml/page/view/NoteTreePage.qml" line="+72"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -132,6 +132,11 @@
     </message>
     <message>
         <location line="+64"/>
+        <source>Open</source>
+        <translation>Открыть</translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>

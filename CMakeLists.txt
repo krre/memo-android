@@ -45,6 +45,7 @@ qt_add_qml_module(memo
         cpp/database/Database.h cpp/database/Database.cpp
         cpp/database/Migrater.h cpp/database/Migrater.cpp
         SOURCES cpp/treeview/TreeItem.cpp cpp/treeview/TreeItem.h cpp/treeview/TreeModel.cpp cpp/treeview/TreeModel.h
+        QML_FILES qml/page/view/NotePage.qml
 )
 
 SET(TS_SOURCE i18n/memo-ru.ts)

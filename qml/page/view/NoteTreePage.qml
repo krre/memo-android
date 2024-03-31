@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQml.Models
- import QtQuick.Dialogs
+import QtQuick.Dialogs
 import Memo 1.0
 import ".."
 
@@ -60,6 +60,11 @@ NamePage {
                 nameDialog.open()
             }
         }
+    }
+
+    Component {
+        id: notePageComp
+        NotePage {}
     }
 
     Dialog {
@@ -149,6 +154,18 @@ NamePage {
 
         Menu {
             id: contextMenu
+
+            MenuItem {
+                text: qsTr("Open")
+                onClicked: {
+                    const currentIndex = treeView.selectionModel.currentIndex
+                    const currentItem = treeModel.item(currentIndex)
+                    const currentId = currentItem.id()
+                    const note = database.note(currentId)
+
+                    pushPage(notePageComp, { "name": note.title, "note": note.note })
+                }
+            }
 
             MenuItem {
                 text: qsTr("Rename")

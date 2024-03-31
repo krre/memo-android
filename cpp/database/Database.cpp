@@ -71,6 +71,12 @@ int Database::insertNote(int parentId, int pos, int depth, const QString& title)
     return query.lastInsertId().toLongLong();
 }
 
+QVariantMap Database::note(int id) const {
+    QSqlQuery query = exec("SELECT * FROM notes WHERE id = :id", { { "id", id } });
+    query.next();
+    return queryToNote(query);
+}
+
 QVariantList Database::notes() const {
     QSqlQuery query = exec("SELECT * FROM notes ORDER BY depth, pos");
     QVariantList result;
