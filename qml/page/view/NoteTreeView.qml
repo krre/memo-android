@@ -93,7 +93,20 @@ NamePage {
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
             const index = treeView.selectionModel.currentIndex
+            const parentItem = treeModel.item(index.parent)
+
+            for (let i = 0; i < parentItem.childCount(); i++) {
+                const id = parentItem.child(i).id()
+                database.updateNoteValue(id, "pos", i)
+            }
+
+            const item = treeModel.item(index)
+            const ids = treeModel.childIds(item)
             treeModel.removeRow(index.row, index.parent)
+
+            for (const id of ids) {
+                database.removeNote(id)
+            }
          }
     }
 

@@ -82,6 +82,10 @@ QVariantList Database::notes() const {
     return result;
 }
 
+void Database::removeNote(int id) const {
+    exec("DELETE FROM notes WHERE id = :id", { { "id", id } });
+}
+
 void Database::updateNoteValue(int id, const QString& name, const QVariant& value) const {
     QVariantMap params = {
         { "id", id },

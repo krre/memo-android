@@ -19,6 +19,7 @@ public:
 
     Q_INVOKABLE int insertNote(int parentId, int pos, int depth, const QString& title) const;
     Q_INVOKABLE QVariantList notes() const;
+    Q_INVOKABLE void removeNote(int id) const;
 
     Q_INVOKABLE void updateNoteValue(int id, const QString& name, const QVariant& value) const;
 

@@ -1,8 +1,6 @@
 #pragma once
 #include <QAbstractItemModel>
 
-using Ids = QList<int>;
-
 class TreeItem;
 
 class TreeModel : public QAbstractItemModel {
@@ -33,7 +31,7 @@ public:
     Q_INVOKABLE TreeItem* root() const;
     Q_INVOKABLE TreeItem* item(const QModelIndex& index) const;
     Q_INVOKABLE QModelIndex itemIndex(TreeItem* item) const;
-    Ids childIds(TreeItem* item) const;
+    Q_INVOKABLE QVariantList childIds(TreeItem* item) const;
 
 signals:
     void itemDropped(const QModelIndex& index);

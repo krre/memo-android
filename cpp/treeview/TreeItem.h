@@ -13,7 +13,7 @@ public:
 
     Q_INVOKABLE TreeItem* find(int id);
 
-    TreeItem* child(int number) const;
+    Q_INVOKABLE TreeItem* child(int number) const;
     Q_INVOKABLE int childCount() const;
     int childNumber() const;
 
