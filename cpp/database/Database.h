@@ -18,6 +18,7 @@ public:
     QString name() const;
 
     Q_INVOKABLE int insertNote(int parentId, int pos, int depth, const QString& title) const;
+    Q_INVOKABLE QVariantList notes() const;
 
     QSqlQuery exec(const QString& sql, const QVariantMap& params = QVariantMap()) const;
     const QSqlDatabase& db() const { return m_db; }
@@ -27,6 +28,7 @@ signals:
 
 private:
     void setName(const QString& name);
+    QVariantMap queryToNote(const QSqlQuery& query) const;
 
     QString directory() const;
     QString filePath(const QString& name) const;

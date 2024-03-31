@@ -38,6 +38,7 @@ void TreeItem::setParent(TreeItem* parent) {
 }
 
 TreeItem* TreeItem::find(int id) {
+    if (id == 0) return nullptr;
     if (m_id == id) return this;
 
     for (TreeItem* child : m_children) {

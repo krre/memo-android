@@ -11,7 +11,7 @@ public:
     TreeItem* parent();
     void setParent(TreeItem* parent);
 
-    TreeItem* find(int id);
+    Q_INVOKABLE TreeItem* find(int id);
 
     TreeItem* child(int number) const;
     Q_INVOKABLE int childCount() const;
@@ -24,8 +24,7 @@ public:
     bool removeChild(int position);
 
     Q_INVOKABLE int id() const;
-    void setId(int id);
-
+    Q_INVOKABLE void setId(int id);
     Q_INVOKABLE int depth();
 
 private:

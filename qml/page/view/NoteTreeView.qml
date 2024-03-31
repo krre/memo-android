@@ -10,13 +10,29 @@ NamePage {
     name: database.name
     buttons: [ addButtonComp.createObject() ]
 
+    Component.onCompleted: loadNotes()
+
+    function loadNotes() {
+        const notes = database.notes()
+
+        for (const note of notes) {
+            const parentItem = treeModel.root().find(note.parent_id)
+            const parentIndex = treeModel.itemIndex(parentItem)
+            treeModel.insertRow(note.pos, parentIndex)
+
+            const noteIndex = treeModel.index(note.pos, 0, parentIndex)
+            treeModel.setData(noteIndex, note.title)
+            treeModel.item(noteIndex).setId(note.id)
+        }
+    }
+
     function addNote(title) {
         const currentIndex = treeView.selectionModel.currentIndex
         const currentItem = treeModel.item(currentIndex)
         const currentId = currentItem.id()
         const pos = currentItem.childCount()
-        const depth = currentItem.depth();
-        const noteId = database.insertNote(currentId, pos, depth, title);
+        const depth = currentItem.depth()
+        const noteId = database.insertNote(currentId, pos, depth, title)
 
         if (!treeModel.insertRow(pos, currentIndex)) {
             return
@@ -24,6 +40,7 @@ NamePage {
 
         const noteIndex = treeModel.index(pos, 0, currentIndex)
         treeModel.setData(noteIndex, title)
+        treeModel.item(noteIndex).setId(noteId);
 
         treeView.selectionModel.setCurrentIndex(noteIndex, ItemSelectionModel.ClearAndSelect)
 

@@ -71,6 +71,17 @@ int Database::insertNote(int parentId, int pos, int depth, const QString& title)
     return query.lastInsertId().toLongLong();
 }
 
+QVariantList Database::notes() const {
+    QSqlQuery query = exec("SELECT * FROM notes ORDER BY depth, pos");
+    QVariantList result;
+
+    while (query.next()) {
+        result.append(queryToNote(query));
+    }
+
+    return result;
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);
@@ -91,6 +102,16 @@ void Database::setName(const QString& name) {
     if (name == m_name) return;
     m_name = name;
     emit nameChanged(name);
+}
+
+QVariantMap Database::queryToNote(const QSqlQuery& query) const {
+    QVariantMap result;
+
+    for (int i = 0; i < query.record().count(); i++) {
+        result[query.record().fieldName(i)] = query.record().value(i);
+    }
+
+    return result;
 }
 
 QString Database::directory() const {

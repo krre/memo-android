@@ -105,7 +105,7 @@ bool TreeModel::dropMimeData(const QMimeData* mimeData, Qt::DropAction action, i
     stream >> id;
 
     TreeItem* sourceItem = m_rootItem->find(id);
-    QModelIndex sourceParent = index(sourceItem->parent());
+    QModelIndex sourceParent = itemIndex(sourceItem->parent());
 
     if (row < 0) {
         if (parent.isValid()) {
@@ -186,7 +186,7 @@ TreeItem* TreeModel::item(const QModelIndex& index) const {
     return m_rootItem.data();
 }
 
-QModelIndex TreeModel::index(TreeItem* item) const {
+QModelIndex TreeModel::itemIndex(TreeItem* item) const {
     return item ? createIndex(item->childNumber(), 0, item) : QModelIndex();
 }
 
