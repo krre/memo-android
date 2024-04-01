@@ -1,8 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import QtQml.Models
-import QtQuick.Dialogs
-import Memo 1.0
 import ".."
 
 NamePage {
