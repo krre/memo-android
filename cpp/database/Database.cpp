@@ -9,6 +9,8 @@ Database::Database(QObject* parent) : QObject(parent) {
 }
 
 void Database::create(const QString& name) {
+    close();
+
     QDir().mkpath(directory());
     QFile::remove(filePath(name));
     open(name);
@@ -16,8 +18,8 @@ void Database::create(const QString& name) {
 
 void Database::open(const QString& name) {
     if (name == m_name) return;
+    close();
 
-    m_db.close();
     m_db.setDatabaseName(filePath(name));
 
     if (!m_db.open()) {
@@ -34,6 +36,8 @@ void Database::open(const QString& name) {
 }
 
 void Database::close() {
+    if (m_name.isEmpty()) return;
+
     m_db.close();
     QString name = m_name;
     setName("");
@@ -69,6 +73,19 @@ int Database::insertNote(int parentId, int pos, int depth, const QString& title)
 
     QSqlQuery query = exec("INSERT INTO notes (parent_id, pos, depth, title) VALUES (:parent_id, :pos, :depth, :title)", params);
     return query.lastInsertId().toLongLong();
+}
+
+void Database::insertRemoteNote(int id, int parentId, int pos, int depth, const QString& title, const QString& note) const {
+    QVariantMap params = {
+        { "id", id },
+        { "parent_id", parentId },
+        { "pos", pos },
+        { "depth", depth },
+        { "title", title },
+        { "note", note }
+    };
+
+    exec("INSERT INTO notes (id, parent_id, pos, depth, title, note) VALUES (:id, :parent_id, :pos, :depth, :title, :note)", params);
 }
 
 QVariantMap Database::note(int id) const {

@@ -26,6 +26,8 @@ qt_add_qml_module(memo
         qml/page/NamePage.qml
         qml/page/database/DatabasePage.qml
         qml/page/view/NoteTreePage.qml
+        qml/page/view/NotePage.qml
+
     RESOURCES icons/memo/20x20/back.png
         icons/memo/20x20/drawer.png
         icons/memo/20x20/menu.png
@@ -44,8 +46,8 @@ qt_add_qml_module(memo
     SOURCES cpp/core/Application.h cpp/core/Application.cpp
         cpp/database/Database.h cpp/database/Database.cpp
         cpp/database/Migrater.h cpp/database/Migrater.cpp
-        SOURCES cpp/treeview/TreeItem.cpp cpp/treeview/TreeItem.h cpp/treeview/TreeModel.cpp cpp/treeview/TreeModel.h
-        QML_FILES qml/page/view/NotePage.qml
+        cpp/treeview/TreeItem.cpp cpp/treeview/TreeItem.h
+        cpp/treeview/TreeModel.cpp cpp/treeview/TreeModel.h
 )
 
 SET(TS_SOURCE i18n/memo-ru.ts)
