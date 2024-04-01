@@ -163,7 +163,7 @@ NamePage {
                     const currentId = currentItem.id()
                     const note = database.note(currentId)
 
-                    pushPage(notePageComp, { "name": note.title, "note": note.note })
+                    pushPage(notePageComp, { "name": note.title, "id": note.id, "note": note.note })
                 }
             }
 

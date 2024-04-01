@@ -102,6 +102,11 @@ void Database::updateNoteValue(int id, const QString& name, const QVariant& valu
     exec(QString("UPDATE notes SET %1 = :value %2 WHERE id = :id").arg(name, updateDate), params);
 }
 
+QVariant Database::noteValue(int id, const QString& name) const {
+    QSqlQuery query = exec(QString("SELECT %1 FROM notes WHERE id = :id").arg(name), { { "id", id } });
+    return query.first() ? query.value(name) : QVariant();
+}
+
 QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);

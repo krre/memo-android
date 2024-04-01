@@ -23,6 +23,7 @@ public:
     Q_INVOKABLE void removeNote(int id) const;
 
     Q_INVOKABLE void updateNoteValue(int id, const QString& name, const QVariant& value) const;
+    Q_INVOKABLE QVariant noteValue(int id, const QString& name) const;
 
     QSqlQuery exec(const QString& sql, const QVariantMap& params = QVariantMap()) const;
     const QSqlDatabase& db() const { return m_db; }
