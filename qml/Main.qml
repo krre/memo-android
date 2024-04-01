@@ -39,6 +39,9 @@ ApplicationWindow {
                 text: stackView.currentItem && stackView.currentItem.name
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
+            }
+
+            Item {
                 Layout.fillWidth: true
             }
 
