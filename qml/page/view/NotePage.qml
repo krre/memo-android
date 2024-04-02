@@ -45,10 +45,13 @@ NamePage {
         }
     }
 
-    TextArea {
-        id: textArea
+    ScrollView {
         anchors.fill: parent
-        text: note
-        readOnly: !editMode
+
+        TextArea {
+            id: textArea
+            text: note
+            readOnly: !editMode
+        }
     }
 }
