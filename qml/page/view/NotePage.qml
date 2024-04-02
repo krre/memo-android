@@ -51,6 +51,7 @@ NamePage {
         TextArea {
             id: textArea
             text: note
+            wrapMode: Text.WordWrap
             readOnly: !editMode
         }
     }
