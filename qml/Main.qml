@@ -36,13 +36,11 @@ ApplicationWindow {
 
             Label {
                 id: title
+                Layout.fillWidth: true
                 text: stackView.currentItem && stackView.currentItem.name
+                elide: Text.ElideRight
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
-            }
-
-            Item {
-                Layout.fillWidth: true
             }
 
             Row {
