@@ -4,27 +4,32 @@
 <context>
     <name>ConnectPage</name>
     <message>
-        <location filename="../qml/page/database/ConnectPage.qml" line="+7"/>
+        <location filename="../qml/page/database/ConnectPage.qml" line="+8"/>
         <source>Connect to Database</source>
         <translation>Подключиться к базе данных</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+33"/>
+        <source>Network error</source>
+        <translation>Ошибка сети</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>IP address</source>
         <translation>IP адрес</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <source>Port</source>
         <translation>Порт</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>Token</source>
         <translation>Токен</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
@@ -83,7 +88,7 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+58"/>
+        <location filename="../qml/Main.qml" line="+59"/>
         <location line="+95"/>
         <source>About</source>
         <translation>О программе</translation>

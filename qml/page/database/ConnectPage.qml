@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+ import QtQuick.Dialogs
 import ".."
 
 NamePage {
@@ -11,6 +12,12 @@ NamePage {
 
         request.onreadystatechange = function() {
             if (request.readyState === XMLHttpRequest.DONE) {
+                if (!request.response) {
+                    busyIndicator.running = false
+                    messageDialog.open()
+                    return
+                }
+
                 const response = {
                     status : request.status,
                     headers : request.getAllResponseHeaders(),
@@ -26,6 +33,12 @@ NamePage {
         request.open("GET", url)
         request.setRequestHeader("token", token.text)
         request.send()
+    }
+
+    MessageDialog {
+        id: messageDialog
+        buttons: MessageDialog.Ok
+        text: qsTr("Network error")
     }
 
     ColumnLayout {
