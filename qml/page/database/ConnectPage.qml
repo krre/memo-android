@@ -28,7 +28,6 @@ NamePage {
         request.send()
     }
 
-
     ColumnLayout {
         anchors.centerIn: parent
         width: parent.width
@@ -56,8 +55,10 @@ NamePage {
         Button {
             Layout.alignment: Qt.AlignRight
             text: qsTr("OK")
-            enabled: ip.text && port.text && token.text
+            enabled: ip.text && port.text && token.text && !busyIndicator.running
             onClicked: {
+                busyIndicator.running = true
+
                 sendRequest("name", function(response) {
                     const name = JSON.parse(response.content)
                     database.create(name.name)
@@ -69,10 +70,19 @@ NamePage {
                             database.insertRemoteNote(note.id, note.parentId, note.pos, note.depth, note.title, note.note)
                         }
 
+                        busyIndicator.running = false
+
                         openNodeTreeView()
                     })
                 })
             }
         }
+    }
+
+    BusyIndicator {
+        id: busyIndicator
+        anchors.centerIn: parent
+        visible: running
+        running: false
     }
 }
