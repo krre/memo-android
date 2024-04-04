@@ -1,5 +1,6 @@
 #include "TreeModel.h"
 #include "TreeItem.h"
+#include "cpp/database/Database.h"
 #include <QtCore>
 
 constexpr auto TreeItemMimeType = "application/x-treeitem";
@@ -170,10 +171,6 @@ bool TreeModel::moveRows(const QModelIndex& sourceParent, int sourceRow, int cou
     return success;
 }
 
-TreeItem* TreeModel::root() const {
-    return m_rootItem.data();
-}
-
 TreeItem* TreeModel::item(const QModelIndex& index) const {
     if (index.isValid()) {
         auto item = static_cast<TreeItem*>(index.internalPointer());
@@ -199,4 +196,28 @@ QVariantList TreeModel::childIds(TreeItem* item) const {
     }
 
     return result;
+}
+
+void TreeModel::insertNotes() {
+    auto notes = m_database->notes();
+
+    for (auto& note : notes) {
+        auto parentItem = m_rootItem->find(note.parentId);
+        auto parentIndex = itemIndex(parentItem);
+        insertRow(note.pos, parentIndex);
+
+        auto noteIndex = index(note.pos, 0, parentIndex);
+        setData(noteIndex, note.title);
+        item(noteIndex)->setId(note.id);
+    }
+}
+
+Database* TreeModel::database() const {
+    return m_database;
+}
+
+void TreeModel::setDatabase(Database* database) {
+    if (m_database == database) return;
+    m_database = database;
+    emit databaseChanged();
 }

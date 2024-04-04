@@ -7,6 +7,13 @@ class Database : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
 public:
+    struct Note {
+        int id;
+        int parentId;
+        int pos;
+        QString title;
+    };
+
     Database(QObject* parent = nullptr);
 
     Q_INVOKABLE void create(const QString& name);
@@ -20,7 +27,7 @@ public:
     Q_INVOKABLE int insertNote(int parentId, int pos, int depth, const QString& title) const;
     Q_INVOKABLE void insertRemoteNote(int id, int parentId, int pos, int depth, const QString& title, const QString& note) const;
     Q_INVOKABLE QVariantMap note(int id) const;
-    Q_INVOKABLE QVariantList notes() const;
+    QList<Note> notes() const;
     Q_INVOKABLE void removeNote(int id) const;
 
     Q_INVOKABLE void updateNoteValue(int id, const QString& name, const QVariant& value) const;

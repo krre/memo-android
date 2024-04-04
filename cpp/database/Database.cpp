@@ -94,12 +94,18 @@ QVariantMap Database::note(int id) const {
     return queryToNote(query);
 }
 
-QVariantList Database::notes() const {
-    QSqlQuery query = exec("SELECT * FROM notes ORDER BY depth, pos");
-    QVariantList result;
+QList<Database::Note> Database::notes() const {
+    QSqlQuery query = exec("SELECT id, parent_id, pos, title FROM notes ORDER BY depth, pos");
+    QList<Database::Note> result;
 
     while (query.next()) {
-        result.append(queryToNote(query));
+        Note note;
+        note.id = query.value("id").toInt();
+        note.parentId = query.value("parent_id").toInt();
+        note.pos = query.value("pos").toInt();
+        note.title = query.value("title").toString();
+
+        result.append(note);
     }
 
     return result;

@@ -2,9 +2,11 @@
 #include <QAbstractItemModel>
 
 class TreeItem;
+class Database;
 
 class TreeModel : public QAbstractItemModel {
     Q_OBJECT
+    Q_PROPERTY(Database* database READ database WRITE setDatabase NOTIFY databaseChanged FINAL)
 public:
     TreeModel(QObject* parent = nullptr);
     ~TreeModel() override;
@@ -28,14 +30,19 @@ public:
     bool removeRows(int position, int rows, const QModelIndex& parent = QModelIndex()) override;
     bool moveRows(const QModelIndex& sourceParent, int sourceRow, int count, const QModelIndex& destinationParent, int destinationChild) override;
 
-    Q_INVOKABLE TreeItem* root() const;
     Q_INVOKABLE TreeItem* item(const QModelIndex& index) const;
     Q_INVOKABLE QModelIndex itemIndex(TreeItem* item) const;
     Q_INVOKABLE QVariantList childIds(TreeItem* item) const;
+    Q_INVOKABLE void insertNotes();
+
+    Database* database() const;
+    void setDatabase(Database* database);
 
 signals:
     void itemDropped(const QModelIndex& index);
+    void databaseChanged();
 
 private:
     QScopedPointer<TreeItem> m_rootItem;
+    Database* m_database = nullptr;
 };
