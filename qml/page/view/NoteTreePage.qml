@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
-import QtQml.Models
 import QtQuick.Dialogs
+import QtQml.Models
 import Memo 1.0
 import ".."
 
@@ -54,11 +54,7 @@ NamePage {
 
         ToolButton {
             text: "Add"
-            onClicked: {
-                name.clear()
-                name.forceActiveFocus()
-                nameDialog.open()
-            }
+            onClicked: addNoteDialog.show()
         }
     }
 
@@ -67,26 +63,14 @@ NamePage {
         NotePage {}
     }
 
-    Dialog {
-        id: nameDialog
+    NameDialog {
+        id: addNoteDialog
         title: qsTr("Add Note")
-        anchors.centerIn: parent
-        width: root.width * 0.8
-        parent: Overlay.overlay
-        focus: true
-        modal: true
-        standardButtons: Dialog.Ok | Dialog.Cancel
 
         onAccepted: {
-            if (name.text) {
-                addNote(name.text)
+            if (name) {
+                addNote(name)
             }
-        }
-
-        TextField {
-            id: name
-            placeholderText: qsTr("Name")
-            width: parent.width
         }
     }
 

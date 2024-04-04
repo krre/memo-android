@@ -19,7 +19,9 @@ qt_add_executable(memo
 qt_add_qml_module(memo
     URI memoqml
     NO_RESOURCE_TARGET_PATH
-    QML_FILES qml/Main.qml
+
+    QML_FILES
+        qml/Main.qml
         qml/page/database/CreatePage.qml
         qml/page/database/OpenPage.qml
         qml/page/database/ConnectPage.qml
@@ -27,8 +29,10 @@ qt_add_qml_module(memo
         qml/page/database/DatabasePage.qml
         qml/page/view/NoteTreePage.qml
         qml/page/view/NotePage.qml
+        qml/page/view/NameDialog.qml
 
-    RESOURCES icons/memo/20x20/back.png
+    RESOURCES
+        icons/memo/20x20/back.png
         icons/memo/20x20/drawer.png
         icons/memo/20x20/menu.png
         icons/memo/20x20@2/back.png
@@ -43,7 +47,9 @@ qt_add_qml_module(memo
         icons/memo/index.theme
         qmldir
         qtquickcontrols2.conf
-    SOURCES cpp/core/Application.h cpp/core/Application.cpp
+
+    SOURCES
+        cpp/core/Application.h cpp/core/Application.cpp
         cpp/database/Database.h cpp/database/Database.cpp
         cpp/database/Migrater.h cpp/database/Migrater.cpp
         cpp/treeview/TreeItem.cpp cpp/treeview/TreeItem.h
