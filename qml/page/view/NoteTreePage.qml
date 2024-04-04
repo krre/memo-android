@@ -49,12 +49,22 @@ NamePage {
         treeView.positionViewAtRow(treeView.rowAtIndex(noteIndex), Qt.AlignVCenter)
     }
 
+    function renameNote(title) {
+        const noteIndex = treeView.selectionModel.currentIndex
+        treeModel.setData(noteIndex, title)
+        const item = treeModel.item(noteIndex)
+        database.updateNoteValue(item.id(), "title", title)
+    }
+
     Component {
         id: addButtonComp
 
         ToolButton {
             text: "Add"
-            onClicked: addNoteDialog.show()
+            onClicked: {
+                addNoteDialog.name = ""
+                addNoteDialog.show()
+            }
         }
     }
 
@@ -70,6 +80,17 @@ NamePage {
         onAccepted: {
             if (name) {
                 addNote(name)
+            }
+        }
+    }
+
+    NameDialog {
+        id: renameNoteDialog
+        title: qsTr("Rename Note")
+
+        onAccepted: {
+            if (name) {
+                renameNote(name)
             }
         }
     }
@@ -128,12 +149,6 @@ NamePage {
                     contextMenu.open()
                 }
             }
-
-            onEditingChanged: {
-                if (editing) return
-                const item = treeModel.item(treeView.selectionModel.currentIndex)
-                database.updateNoteValue(item.id(), "title", item.data())
-            }
         }
 
         Menu {
@@ -153,7 +168,12 @@ NamePage {
 
             MenuItem {
                 text: qsTr("Rename")
-                onClicked: treeView.edit(treeView.selectionModel.currentIndex)
+                onClicked: {
+                    const currentIndex = treeView.selectionModel.currentIndex
+                    const currentItem = treeModel.item(currentIndex)
+                    renameNoteDialog.name = currentItem.data()
+                    renameNoteDialog.show()
+                }
             }
 
             MenuItem {

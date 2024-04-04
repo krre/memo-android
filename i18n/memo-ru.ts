@@ -151,14 +151,20 @@
 <context>
     <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/page/view/NoteTreePage.qml" line="+68"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+68"/>
+        <location filename="../qml/page/view/NoteTreePage.qml" line="+72"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+72"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
     <message>
         <source>Name</source>
         <translation type="vanished">Название</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+11"/>
+        <source>Rename Note</source>
+        <translation>Переименовать заметку</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -179,8 +185,8 @@
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+5"/>
+        <location line="+10"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+10"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>

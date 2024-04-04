@@ -11,7 +11,6 @@ Dialog {
     standardButtons: Dialog.Ok | Dialog.Cancel
 
     function show() {
-        name.clear()
         name.forceActiveFocus()
         open()
     }
