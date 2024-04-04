@@ -30,12 +30,11 @@ public:
     bool removeRows(int position, int rows, const QModelIndex& parent = QModelIndex()) override;
     bool moveRows(const QModelIndex& sourceParent, int sourceRow, int count, const QModelIndex& destinationParent, int destinationChild) override;
 
-    Q_INVOKABLE TreeItem* item(const QModelIndex& index) const;
-
     Q_INVOKABLE void insertNotes();
     Q_INVOKABLE QModelIndex insertNote(const QModelIndex& parent, const QString& title);
     Q_INVOKABLE void renameNote(const QModelIndex& index, const QString& title);
     Q_INVOKABLE void removeNote(const QModelIndex& index);
+    Q_INVOKABLE QVariantMap note(const QModelIndex& index);
 
     Database* database() const;
     void setDatabase(Database* database);
@@ -47,6 +46,7 @@ signals:
 private:
     QList<int> childIds(TreeItem* item) const;
     QModelIndex itemIndex(TreeItem* item) const;
+    TreeItem* item(const QModelIndex& index) const;
 
     QScopedPointer<TreeItem> m_rootItem;
     Database* m_database = nullptr;

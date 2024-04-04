@@ -104,11 +104,7 @@ NamePage {
             MenuItem {
                 text: qsTr("Open")
                 onClicked: {
-                    const currentIndex = treeView.selectionModel.currentIndex
-                    const currentItem = treeModel.item(currentIndex)
-                    const currentId = currentItem.id()
-                    const note = database.note(currentId)
-
+                    const note = treeModel.note(treeView.selectionModel.currentIndex)
                     pushPage(notePageComp, { "name": note.title, "id": note.id, "note": note.note })
                 }
             }
@@ -116,9 +112,7 @@ NamePage {
             MenuItem {
                 text: qsTr("Rename")
                 onClicked: {
-                    const currentIndex = treeView.selectionModel.currentIndex
-                    const currentItem = treeModel.item(currentIndex)
-                    renameNoteDialog.name = currentItem.data()
+                    renameNoteDialog.name = treeModel.note(treeView.selectionModel.currentIndex).title
                     renameNoteDialog.show()
                 }
             }
