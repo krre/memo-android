@@ -50,6 +50,7 @@ NamePage {
             id: ip
             Layout.preferredWidth: parent.width
             placeholderText: qsTr("IP address")
+            text: remoteSettings.ip
             focus: true
         }
 
@@ -57,6 +58,7 @@ NamePage {
             id: port
             Layout.preferredWidth: parent.width
             placeholderText: qsTr("Port")
+            text: remoteSettings.port
         }
 
         TextField {
@@ -73,8 +75,11 @@ NamePage {
                 busyIndicator.running = true
 
                 sendRequest("name", function(response) {
-                    const name = JSON.parse(response.content)
-                    database.create(name.name)
+                    database.close()
+                    database.create(JSON.parse(response.content).name)
+
+                    remoteSettings.ip = ip.text
+                    remoteSettings.port = +port.text
 
                     sendRequest("notes", function(response) {
                         const notes = JSON.parse(response.content)

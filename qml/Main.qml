@@ -16,15 +16,15 @@ ApplicationWindow {
         x = (Screen.desktopAvailableWidth - width) /2
         y = (Screen.desktopAvailableHeight - height) /2
 
-        if (settings.name) {
-            database.open(settings.name)
+        if (databaseSettings.name) {
+            database.open(databaseSettings.name)
             openNodeTreeView()
         } else {
             stackView.push(databasePageComp)
         }
     }
 
-    Component.onDestruction: settings.name = database.name
+    Component.onDestruction: databaseSettings.name = database.name
 
     header: ToolBar {
         RowLayout {
@@ -70,8 +70,16 @@ ApplicationWindow {
     }
 
     Settings {
-        id: settings
+        id: databaseSettings
+        category: "Database"
         property string name
+    }
+
+    Settings {
+        id: remoteSettings
+        category: "Remote"
+        property string ip
+        property int port
     }
 
     Shortcut {
