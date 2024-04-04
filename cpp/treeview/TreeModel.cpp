@@ -212,6 +212,20 @@ void TreeModel::insertNotes() {
     }
 }
 
+QModelIndex TreeModel::insertNote(const QModelIndex& parent, const QString& title) {
+    auto parentItem = item(parent);
+    int pos = parentItem->childCount();
+    int id = m_database->insertNote(parentItem->id(), pos, parentItem->depth(), title);
+
+    insertRow(pos, parent);
+
+    auto noteIndex = index(pos, 0, parent);
+    setData(noteIndex, title);
+    item(noteIndex)->setId(id);
+
+    return noteIndex;
+}
+
 Database* TreeModel::database() const {
     return m_database;
 }

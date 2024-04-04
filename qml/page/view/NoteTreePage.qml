@@ -13,21 +13,7 @@ NamePage {
     Component.onCompleted: treeModel.insertNotes()
 
     function addNote(title) {
-        const currentIndex = treeView.selectionModel.currentIndex
-        const currentItem = treeModel.item(currentIndex)
-        const currentId = currentItem.id()
-        const pos = currentItem.childCount()
-        const depth = currentItem.depth()
-        const noteId = database.insertNote(currentId, pos, depth, title)
-
-        if (!treeModel.insertRow(pos, currentIndex)) {
-            return
-        }
-
-        const noteIndex = treeModel.index(pos, 0, currentIndex)
-        treeModel.setData(noteIndex, title)
-        treeModel.item(noteIndex).setId(noteId);
-
+        const noteIndex = treeModel.insertNote(treeView.selectionModel.currentIndex, title)
         treeView.selectionModel.setCurrentIndex(noteIndex, ItemSelectionModel.ClearAndSelect)
 
         treeView.expandToIndex(noteIndex)
