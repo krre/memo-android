@@ -39,7 +39,7 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 text: stackView.currentItem && stackView.currentItem.name
                 elide: Text.ElideRight
-                horizontalAlignment: Qt.AlignHCenter
+                horizontalAlignment: Qt.AlignLeft
                 verticalAlignment: Qt.AlignVCenter
             }
 
