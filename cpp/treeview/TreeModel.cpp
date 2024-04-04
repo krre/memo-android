@@ -187,8 +187,8 @@ QModelIndex TreeModel::itemIndex(TreeItem* item) const {
     return item ? createIndex(item->childNumber(), 0, item) : QModelIndex();
 }
 
-QVariantList TreeModel::childIds(TreeItem* item) const {
-    QVariantList result;
+QList<int> TreeModel::childIds(TreeItem* item) const {
+    QList<int> result;
     result.append(item->id());
 
     for (int i = 0; i < item->childCount(); i++) {
@@ -224,6 +224,22 @@ QModelIndex TreeModel::insertNote(const QModelIndex& parent, const QString& titl
     item(noteIndex)->setId(id);
 
     return noteIndex;
+}
+
+void TreeModel::removeNote(const QModelIndex& index) {
+    auto parentItem = item(index.parent());
+
+    for (int i = 0; i < parentItem->childCount(); i++) {
+        int id = parentItem->child(i)->id();
+        m_database->updateNoteValue(id, "pos", i);
+    }
+
+    auto ids = childIds(item(index));
+    removeRow(index.row(), index.parent());
+
+    for (int id : ids) {
+        m_database->removeNote(id);
+    }
 }
 
 Database* TreeModel::database() const {

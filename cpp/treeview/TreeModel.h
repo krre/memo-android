@@ -31,11 +31,10 @@ public:
     bool moveRows(const QModelIndex& sourceParent, int sourceRow, int count, const QModelIndex& destinationParent, int destinationChild) override;
 
     Q_INVOKABLE TreeItem* item(const QModelIndex& index) const;
-    QModelIndex itemIndex(TreeItem* item) const;
-    Q_INVOKABLE QVariantList childIds(TreeItem* item) const;
 
     Q_INVOKABLE void insertNotes();
     Q_INVOKABLE QModelIndex insertNote(const QModelIndex& parent, const QString& title);
+    Q_INVOKABLE void removeNote(const QModelIndex& index);
 
     Database* database() const;
     void setDatabase(Database* database);
@@ -45,6 +44,9 @@ signals:
     void databaseChanged();
 
 private:
+    QList<int> childIds(TreeItem* item) const;
+    QModelIndex itemIndex(TreeItem* item) const;
+
     QScopedPointer<TreeItem> m_rootItem;
     Database* m_database = nullptr;
 };
