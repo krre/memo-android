@@ -12,22 +12,6 @@ NamePage {
 
     Component.onCompleted: treeModel.insertNotes()
 
-    function addNote(title) {
-        const noteIndex = treeModel.insertNote(treeView.selectionModel.currentIndex, title)
-        treeView.selectionModel.setCurrentIndex(noteIndex, ItemSelectionModel.ClearAndSelect)
-
-        treeView.expandToIndex(noteIndex)
-        treeView.forceLayout()
-        treeView.positionViewAtRow(treeView.rowAtIndex(noteIndex), Qt.AlignVCenter)
-    }
-
-    function renameNote(title) {
-        const noteIndex = treeView.selectionModel.currentIndex
-        treeModel.setData(noteIndex, title)
-        const item = treeModel.item(noteIndex)
-        database.updateNoteValue(item.id(), "title", title)
-    }
-
     Component {
         id: addButtonComp
 
@@ -50,9 +34,14 @@ NamePage {
         title: qsTr("Add Note")
 
         onAccepted: {
-            if (name) {
-                addNote(name)
-            }
+            if (!name) return
+
+            const noteIndex = treeModel.insertNote(treeView.selectionModel.currentIndex, name)
+            treeView.selectionModel.setCurrentIndex(noteIndex, ItemSelectionModel.ClearAndSelect)
+
+            treeView.expandToIndex(noteIndex)
+            treeView.forceLayout()
+            treeView.positionViewAtRow(treeView.rowAtIndex(noteIndex), Qt.AlignVCenter)
         }
     }
 
@@ -61,9 +50,12 @@ NamePage {
         title: qsTr("Rename Note")
 
         onAccepted: {
-            if (name) {
-                renameNote(name)
-            }
+            if (!name) return
+
+            const noteIndex = treeView.selectionModel.currentIndex
+            treeModel.setData(noteIndex, name)
+            const item = treeModel.item(noteIndex)
+            database.updateNoteValue(item.id(), "title", name)
         }
     }
 
