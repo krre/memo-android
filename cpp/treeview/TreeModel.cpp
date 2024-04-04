@@ -226,6 +226,11 @@ QModelIndex TreeModel::insertNote(const QModelIndex& parent, const QString& titl
     return noteIndex;
 }
 
+void TreeModel::renameNote(const QModelIndex& index, const QString& title) {
+    setData(index, title);
+    m_database->updateNoteValue(item(index)->id(), "title", title);
+}
+
 void TreeModel::removeNote(const QModelIndex& index) {
     auto parentItem = item(index.parent());
 

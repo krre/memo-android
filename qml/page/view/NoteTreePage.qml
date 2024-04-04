@@ -51,11 +51,7 @@ NamePage {
 
         onAccepted: {
             if (!name) return
-
-            const noteIndex = treeView.selectionModel.currentIndex
-            treeModel.setData(noteIndex, name)
-            const item = treeModel.item(noteIndex)
-            database.updateNoteValue(item.id(), "title", name)
+            treeModel.renameNote(treeView.selectionModel.currentIndex, name)
         }
     }
 
