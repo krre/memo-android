@@ -37,21 +37,25 @@ qt_add_qml_module(memo
         icons/memo/20x20/drawer.png
         icons/memo/20x20/edit.png
         icons/memo/20x20/menu.png
+        icons/memo/20x20/save.png
         icons/memo/20x20@2/add_box.png
         icons/memo/20x20@2/back.png
         icons/memo/20x20@2/drawer.png
         icons/memo/20x20@2/edit.png
         icons/memo/20x20@2/menu.png
+        icons/memo/20x20@2/save.png
         icons/memo/20x20@3/add_box.png
         icons/memo/20x20@3/back.png
         icons/memo/20x20@3/drawer.png
         icons/memo/20x20@3/edit.png
         icons/memo/20x20@3/menu.png
+        icons/memo/20x20@3/save.png
         icons/memo/20x20@4/add_box.png
         icons/memo/20x20@4/back.png
         icons/memo/20x20@4/drawer.png
         icons/memo/20x20@4/edit.png
         icons/memo/20x20@4/menu.png
+        icons/memo/20x20@4/save.png
         icons/memo/index.theme
         qmldir
         qtquickcontrols2.conf

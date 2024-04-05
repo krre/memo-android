@@ -25,7 +25,7 @@ NamePage {
         id: saveButtonComp
 
         ToolButton {
-            text: "Save"
+            icon.name: "save"
             onClicked: {
                 database.updateNoteValue(id, "note", textArea.text)
                 editMode = false
