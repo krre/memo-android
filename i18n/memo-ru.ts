@@ -217,8 +217,8 @@
 <context>
     <name>OpenPage</name>
     <message>
-        <location filename="../qml/page/database/OpenPage.qml" line="+7"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+7"/>
+        <location filename="../qml/page/database/OpenPage.qml" line="+9"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+9"/>
         <source>Open Database</source>
         <translation>Открыть базу данных</translation>
     </message>
@@ -229,10 +229,22 @@
         <translation>Вы желаете удалить базу данных?</translation>
     </message>
     <message>
-        <location line="+35"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+35"/>
+        <location line="+12"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+12"/>
+        <source>Rename Database</source>
+        <translation>Переименовать базу данных</translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+34"/>
         <source>Remove</source>
         <translation>Удалить</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+5"/>
+        <source>Rename</source>
+        <translation>Переименовать</translation>
     </message>
 </context>
 </TS>

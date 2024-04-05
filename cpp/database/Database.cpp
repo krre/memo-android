@@ -50,6 +50,12 @@ void Database::remove(const QString& name) {
     qInfo().noquote() << "Database removed:" << filePath(name);
 }
 
+void Database::rename(const QString& oldName, const QString& newName) {
+    if (oldName == m_name) close();
+    QFile::rename(filePath(oldName), filePath(newName));
+    qInfo().noquote() << "Database renamed:" << filePath(newName);
+}
+
 bool Database::isExists(const QString& name) {
     return QFileInfo::exists(filePath(name));
 }

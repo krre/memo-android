@@ -1,9 +1,11 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
+import "../view"
 import ".."
 
 NamePage {
+    id: root
     name: qsTr("Open Database")
 
     MessageDialog {
@@ -16,6 +18,17 @@ NamePage {
             database.remove(contextMenu.dbName)
             listView.model = database.list()
          }
+    }
+
+    NameDialog {
+        id: renameDialog
+        title: qsTr("Rename Database")
+
+        onAccepted: {
+            if (!name) return
+            database.rename(contextMenu.dbName, name)
+            listView.model = database.list()
+        }
     }
 
     ListView {
@@ -45,6 +58,14 @@ NamePage {
             MenuItem {
                 text: qsTr("Remove")
                 onClicked: removeDialog.open()
+            }
+
+            MenuItem {
+                text: qsTr("Rename")
+                onClicked: {
+                    renameDialog.name = contextMenu.dbName
+                    renameDialog.show()
+                }
             }
         }
     }
