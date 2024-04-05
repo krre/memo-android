@@ -86,7 +86,7 @@ NamePage {
             TapHandler {
                 acceptedButtons: Qt.RightButton
                 onSingleTapped: (eventPoint, button) => {
-                    if (button !== Qt.RightButton) return
+                    if (button !== Qt.RightButton || !treeView.selectionModel.currentIndex.valid) return
 
                     const rootPos = delegate.mapToItem(root, eventPoint.position)
 
