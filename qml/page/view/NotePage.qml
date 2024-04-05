@@ -13,7 +13,7 @@ NamePage {
         id: editButtonComp
 
         ToolButton {
-            text: "Edit"
+            icon.name: "edit"
             onClicked: {
                 textArea.forceActiveFocus()
                 editMode = true
