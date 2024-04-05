@@ -59,7 +59,8 @@ QStringList Database::list() const {
     QDir dir(directory());
 
     for (const auto& fi : dir.entryInfoList({ "*.db" }, QDir::Files)) {
-        result.append(fi.fileName());
+        QString name = fi.fileName().left(fi.fileName().size() - 3); // Name without extension .db
+        result.append(name);
     }
 
     return result;
