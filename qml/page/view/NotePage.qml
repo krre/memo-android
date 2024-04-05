@@ -37,7 +37,7 @@ NamePage {
         id: cancelButtonComp
 
         ToolButton {
-            text: "Cancel"
+            icon.name: "cancel"
             onClicked: {
                 textArea.text = database.noteValue(id, "note")
                 editMode = false
