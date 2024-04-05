@@ -16,7 +16,7 @@ NamePage {
         id: addButtonComp
 
         ToolButton {
-            text: "Add"
+            icon.name: "add_box"
             onClicked: {
                 addNoteDialog.name = ""
                 addNoteDialog.show()
