@@ -44,6 +44,12 @@ void Database::close() {
     qInfo().noquote() << "Database closed:" << filePath(name);
 }
 
+void Database::remove(const QString& name) {
+    if (name == m_name) close();
+    QFile::remove(filePath(name));
+    qInfo().noquote() << "Database removed:" << filePath(name);
+}
+
 bool Database::isExists(const QString& name) {
     return QFileInfo::exists(filePath(name));
 }

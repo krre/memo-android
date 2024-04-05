@@ -19,6 +19,7 @@ public:
     Q_INVOKABLE void create(const QString& name);
     Q_INVOKABLE void open(const QString& name);
     Q_INVOKABLE void close();
+    Q_INVOKABLE void remove(const QString& name);
     Q_INVOKABLE bool isExists(const QString& name);
     Q_INVOKABLE QStringList list() const;
 

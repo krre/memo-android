@@ -34,8 +34,8 @@
         <translation>Токен</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/ConnectPage.qml" line="+6"/>
+        <location line="+5"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/ConnectPage.qml" line="+5"/>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
@@ -104,9 +104,9 @@
     <name>Main</name>
     <message>
         <location filename="../qml/Main.qml" line="+59"/>
-        <location line="+95"/>
+        <location line="+103"/>
         <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/Main.qml" line="+59"/>
-        <location line="+95"/>
+        <location line="+103"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
@@ -142,8 +142,8 @@
 <context>
     <name>NameDialog</name>
     <message>
-        <location filename="../qml/page/view/NameDialog.qml" line="+21"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NameDialog.qml" line="+21"/>
+        <location filename="../qml/page/view/NameDialog.qml" line="+20"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NameDialog.qml" line="+20"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -151,8 +151,8 @@
 <context>
     <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/page/view/NoteTreePage.qml" line="+72"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+72"/>
+        <location filename="../qml/page/view/NoteTreePage.qml" line="+34"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+34"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -161,32 +161,32 @@
         <translation type="vanished">Название</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+11"/>
+        <location line="+16"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+16"/>
         <source>Rename Note</source>
         <translation>Переименовать заметку</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+11"/>
+        <location line="+10"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+10"/>
         <source>Do you want to remove note?</source>
         <translation>Вы желаете удалить заметку?</translation>
     </message>
     <message>
-        <location line="+64"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+64"/>
+        <location line="+45"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+45"/>
         <source>Open</source>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location line="+12"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+12"/>
+        <location line="+8"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+8"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+10"/>
+        <location line="+8"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/view/NoteTreePage.qml" line="+8"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
@@ -217,10 +217,22 @@
 <context>
     <name>OpenPage</name>
     <message>
-        <location filename="../qml/page/database/OpenPage.qml" line="+6"/>
-        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+6"/>
+        <location filename="../qml/page/database/OpenPage.qml" line="+7"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+7"/>
         <source>Open Database</source>
         <translation>Открыть базу данных</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+4"/>
+        <source>Do you want to remove database?</source>
+        <translation>Вы желаете удалить базу данных?</translation>
+    </message>
+    <message>
+        <location line="+35"/>
+        <location filename="../build-memo-Desktop_Qt_6_7_0-Debug/memoqml/qml/page/database/OpenPage.qml" line="+35"/>
+        <source>Remove</source>
+        <translation>Удалить</translation>
     </message>
 </context>
 </TS>
