@@ -16,7 +16,7 @@ ApplicationWindow {
         x = (Screen.desktopAvailableWidth - width) /2
         y = (Screen.desktopAvailableHeight - height) /2
 
-        if (databaseSettings.name) {
+        if (database.isExists(databaseSettings.name)) {
             database.open(databaseSettings.name)
             openNodeTreeView()
         } else {
