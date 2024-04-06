@@ -9,7 +9,8 @@ NamePage {
     id: root
     readonly property bool isTreeView: true
     name: database.name
-    toolBar:  ToolButton {
+    toolBar:  Row {
+        ToolButton {
             icon.name: "add_box"
             onClicked: {
                 addNoteDialog.name = ""
@@ -17,7 +18,18 @@ NamePage {
             }
         }
 
+        ToolButton {
+            icon.name: "deselect"
+            enabled: treeView.selectionModel.currentIndex.valid
+            onClicked: treeView.selectionModel.clearCurrentIndex()
+        }
+    }
+
     Component.onCompleted: treeModel.insertNotes()
+
+    function clearSelection() {
+        treeView.selectionModel.clearCurrentIndex()
+    }
 
     Component {
         id: notePageComp
@@ -115,25 +127,6 @@ NamePage {
             MenuItem {
                 text: qsTr("Remove")
                 onClicked: removeDialog.open()
-            }
-        }
-    }
-
-    MouseArea {
-        anchors.fill: parent
-
-        onPressed: (mouse) => {
-            mouse.accepted = false
-            const cell = treeView.cellAtPosition(mouseX, mouseY)
-
-            if (cell.x === -1 && cell.y === - 1) {
-                treeView.selectionModel.clearCurrentIndex()
-            } else {
-                const index = treeView.modelIndex(cell)
-                treeView.selectionModel.setCurrentIndex(index, ItemSelectionModel.ClearAndSelect)
-
-                contextMenu.x = mouseX
-                contextMenu.y = mouseY
             }
         }
     }
