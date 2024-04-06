@@ -21,7 +21,7 @@ NamePage {
         ToolButton {
             icon.name: "deselect"
             enabled: treeView.selectionModel.currentIndex.valid
-            onClicked: treeView.selectionModel.clearCurrentIndex()
+            onClicked: treeView.selectionModel.clear()
         }
     }
 
@@ -87,20 +87,20 @@ NamePage {
             id: delegate
 
             // Android case for production.
-            onPressAndHold: contextMenu.open()
+            onPressAndHold: contextMenu.popup(delegate)
 
-            // Desktop case for developing.
             TapHandler {
                 acceptedButtons: Qt.RightButton
+                // Desktop case for developing.
                 onSingleTapped: (eventPoint, button) => {
-                    if (button !== Qt.RightButton || !treeView.selectionModel.currentIndex.valid) return
+                    if (button === Qt.RightButton && treeView.selectionModel.currentIndex.valid) {
+                        contextMenu.popup()
+                    }
+                }
 
-                    const rootPos = delegate.mapToItem(root, eventPoint.position)
-
-                    contextMenu.x = rootPos.x
-                    contextMenu.y = rootPos.y
-
-                    contextMenu.open()
+                onTapped: {
+                    const index = treeView.index(row, column)
+                    treeView.selectionModel.setCurrentIndex(index, ItemSelectionModel.ClearAndSelect)
                 }
             }
         }
