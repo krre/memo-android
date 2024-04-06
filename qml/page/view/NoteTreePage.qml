@@ -85,6 +85,7 @@ NamePage {
         selectionModel: ItemSelectionModel {}
         delegate: TreeViewDelegate {
             id: delegate
+            implicitWidth: treeView.width
 
             // Android case for production.
             onPressAndHold: contextMenu.popup(delegate)
