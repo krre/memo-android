@@ -7,22 +7,17 @@ import ".."
 
 NamePage {
     id: root
+    readonly property bool isTreeView: true
     name: database.name
-    buttons: [ addButtonComp.createObject() ]
-
-    Component.onCompleted: treeModel.insertNotes()
-
-    Component {
-        id: addButtonComp
-
-        ToolButton {
+    toolBar:  ToolButton {
             icon.name: "add_box"
             onClicked: {
                 addNoteDialog.name = ""
                 addNoteDialog.show()
             }
         }
-    }
+
+    Component.onCompleted: treeModel.insertNotes()
 
     Component {
         id: notePageComp

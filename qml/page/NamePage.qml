@@ -5,7 +5,7 @@ Page {
     required property string name
     default property alias data: content.data
     property bool isInitialPage: false
-    property var buttons: []
+    property var toolBar: []
 
     function pushPage(item, properties, operation) {
         StackView.view.push(item, properties, operation)

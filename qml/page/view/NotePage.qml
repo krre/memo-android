@@ -7,37 +7,28 @@ NamePage {
     required property int id
     required property string note
     property bool editMode: false
-    buttons: editMode ? [ saveButtonComp.createObject(), cancelButtonComp.createObject() ] : [ editButtonComp.createObject() ]
-
-    Component {
-        id: editButtonComp
-
+    toolBar: Row {
         ToolButton {
             icon.name: "edit"
+            visible: !editMode
             onClicked: {
                 textArea.forceActiveFocus()
                 editMode = true
             }
         }
-    }
-
-    Component {
-        id: saveButtonComp
 
         ToolButton {
             icon.name: "save"
+            visible: editMode
             onClicked: {
                 database.updateNoteValue(id, "note", textArea.text)
                 editMode = false
             }
         }
-    }
-
-    Component {
-        id: cancelButtonComp
 
         ToolButton {
             icon.name: "cancel"
+            visible: editMode
             onClicked: {
                 textArea.text = database.noteValue(id, "note")
                 editMode = false

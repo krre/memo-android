@@ -44,7 +44,7 @@ ApplicationWindow {
             }
 
             Row {
-                data: stackView.currentItem ? stackView.currentItem.buttons : []
+                data: stackView.currentItem ? stackView.currentItem.toolBar : []
             }
 
             ToolButton {
