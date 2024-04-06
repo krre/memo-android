@@ -7,13 +7,16 @@ NamePage {
     required property int id
     required property string note
     property bool editMode: false
+
+    Component.onCompleted: textArea.forceActiveFocus()
+
     toolBar: Row {
         ToolButton {
             icon.name: "edit"
             visible: !editMode
             onClicked: {
-                textArea.forceActiveFocus()
                 editMode = true
+                textArea.forceActiveFocus()
             }
         }
 
@@ -23,6 +26,7 @@ NamePage {
             onClicked: {
                 database.updateNoteValue(id, "note", textArea.text)
                 editMode = false
+                textArea.forceActiveFocus()
             }
         }
 
@@ -32,6 +36,7 @@ NamePage {
             onClicked: {
                 textArea.text = database.noteValue(id, "note")
                 editMode = false
+                textArea.forceActiveFocus()
             }
         }
     }
