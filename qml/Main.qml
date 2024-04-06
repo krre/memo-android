@@ -126,16 +126,6 @@ ApplicationWindow {
 
             ItemDelegate {
                 width: parent.width
-                text: qsTr("Database")
-                visible: stackView.currentItem && !stackView.currentItem.isInitialPage
-                onClicked: {
-                    stackView.push(databasePageComp)
-                    drawer.close()
-                }
-            }
-
-            ItemDelegate {
-                width: parent.width
                 visible: database.name
                 text: qsTr("Close")
                 onClicked: {

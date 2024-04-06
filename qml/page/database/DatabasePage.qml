@@ -5,7 +5,6 @@ import ".."
 
 NamePage {
     name: qsTr("Database")
-    isInitialPage: true
 
     ColumnLayout {
         anchors.centerIn: parent

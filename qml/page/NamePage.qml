@@ -4,7 +4,6 @@ import QtQuick.Controls
 Page {
     required property string name
     default property alias data: content.data
-    property bool isInitialPage: false
     property var toolBar: []
 
     function pushPage(item, properties, operation) {
