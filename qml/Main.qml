@@ -13,8 +13,8 @@ ApplicationWindow {
     title: app.name
 
     Component.onCompleted: {
-        x = (Screen.desktopAvailableWidth - width) /2
-        y = (Screen.desktopAvailableHeight - height) /2
+        x = (Screen.desktopAvailableWidth - width) / 2
+        y = (Screen.desktopAvailableHeight - height) / 2
 
         if (database.isExists(databaseSettings.name)) {
             database.open(databaseSettings.name)
