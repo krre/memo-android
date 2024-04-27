@@ -2,7 +2,7 @@ import QtCore
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Memo 1.0
+import Memo
 import "page/database"
 import "page/view"
 

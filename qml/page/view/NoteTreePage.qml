@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 import QtQml.Models
-import Memo 1.0
+import Memo
 import ".."
 
 NamePage {
