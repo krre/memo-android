@@ -7,6 +7,7 @@ import "page/database"
 import "page/view"
 
 ApplicationWindow {
+    id: root
     width: 400
     height: 770
     visible: true
@@ -57,7 +58,7 @@ ApplicationWindow {
 
                     Action {
                         text: qsTr("About")
-                        onTriggered: aboutDialog.open()
+                        onTriggered: aboutDialogComp.createObject(root)
                     }
                 }
             }
@@ -144,29 +145,13 @@ ApplicationWindow {
         }
     }
 
-    Dialog {
-        id: aboutDialog
-        anchors.centerIn: parent
-        modal: true
-        focus: true
-        title: qsTr("About")
-
-        Label {
-            text: qsTr("<h3>%1 %2</h3><br> \
-                        Note-taking for quick notes<br><br> \
-                        Based on Qt %3<br> \
-                        Build on %4 %5<br><br> \
-                        <a href='%6'>%6</a><br><br>Copyright © %7, Vladimir Zarypov")
-            .arg(app.name).arg(app.version).arg(app.qtVersion)
-            .arg(app.buildDate).arg(app.buildTime)
-            .arg(app.url).arg(app.copyrightYears)
-
-            onLinkActivated: (link) => Qt.openUrlExternally(link)
-        }
-    }
-
     Database {
         id: database
+    }
+
+    Component {
+        id: aboutDialogComp
+        AboutDialog {}
     }
 
     Component {

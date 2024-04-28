@@ -22,6 +22,7 @@ qt_add_qml_module(memo
 
     QML_FILES
         qml/Main.qml
+        qml/AboutDialog.qml
         qml/page/database/CreatePage.qml
         qml/page/database/OpenPage.qml
         qml/page/database/ConnectPage.qml
