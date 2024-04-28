@@ -66,7 +66,6 @@ qt_add_qml_module(memo
         icons/memo/20x20@4/menu.png
         icons/memo/20x20@4/save.png
         icons/memo/index.theme
-        qmldir
         qtquickcontrols2.conf
 
     SOURCES
