@@ -79,7 +79,10 @@ qt_add_qml_module(memo
 
 SET(TS_SOURCE i18n/memo-ru.ts)
 
-qt_add_translations(memo TS_FILES ${TS_SOURCE})
+qt_add_translations(memo
+    TS_FILES ${TS_SOURCE}
+    # LUPDATE_OPTIONS -no-obsolete
+)
 
 # For visibility in IDE (e.g., Qt Creator)
 add_custom_target(other
