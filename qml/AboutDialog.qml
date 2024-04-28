@@ -7,6 +7,7 @@ Dialog {
     modal: true
     focus: true
     title: qsTr("About")
+    standardButtons: Dialog.Ok
 
     Component.onCompleted: open()
 
