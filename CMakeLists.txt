@@ -81,6 +81,7 @@ SET(TS_SOURCE i18n/memo-ru.ts)
 
 qt_add_translations(memo
     TS_FILES ${TS_SOURCE}
+    SOURCE_TARGETS memo
     # LUPDATE_OPTIONS -no-obsolete
 )
 
