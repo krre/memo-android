@@ -232,15 +232,15 @@ void TreeModel::renameNote(const QModelIndex& index, const QString& title) {
 }
 
 void TreeModel::removeNote(const QModelIndex& index) {
+    auto ids = childIds(item(index));
+    removeRow(index.row(), index.parent());
+
     auto parentItem = item(index.parent());
 
     for (int i = 0; i < parentItem->childCount(); i++) {
         int id = parentItem->child(i)->id();
         m_database->updateNoteValue(id, "pos", i);
     }
-
-    auto ids = childIds(item(index));
-    removeRow(index.row(), index.parent());
 
     for (int id : ids) {
         m_database->removeNote(id);
