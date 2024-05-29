@@ -21,7 +21,7 @@ Dialog {
                     <a href='%6'>%6</a><br><br>Copyright © %7, Vladimir Zarypov")
         .arg(app.name).arg(app.version).arg(app.qtVersion)
         .arg(app.buildDate).arg(app.buildTime)
-        .arg(app.url).arg(app.copyrightYears)
+        .arg(app.url).arg(app.years)
 
         onLinkActivated: (link) => Qt.openUrlExternally(link)
     }
