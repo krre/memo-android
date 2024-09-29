@@ -3,4 +3,4 @@
 Note-taking for my personal usage (Qt Android version).
 
 ## Dependencies
-- Qt 6.7
+- Qt 6.8
