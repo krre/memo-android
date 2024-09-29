@@ -87,22 +87,13 @@ NamePage {
             id: delegate
             implicitWidth: treeView.width
 
-            // Android case for production.
-            onPressAndHold: contextMenu.popup(delegate)
-
             TapHandler {
-                acceptedButtons: Qt.RightButton
-                // Desktop case for developing.
-                onSingleTapped: (eventPoint, button) => {
-                    if (button === Qt.RightButton && treeView.selectionModel.currentIndex.valid) {
-                        contextMenu.popup()
-                    }
-                }
-
                 onTapped: {
                     const index = treeView.index(row, column)
                     treeView.selectionModel.setCurrentIndex(index, ItemSelectionModel.ClearAndSelect)
                 }
+
+                onLongPressed: contextMenu.popup(delegate)
             }
         }
 
