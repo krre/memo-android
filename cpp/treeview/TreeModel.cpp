@@ -188,8 +188,7 @@ QModelIndex TreeModel::itemIndex(TreeItem* item) const {
 }
 
 QList<int> TreeModel::childIds(TreeItem* item) const {
-    QList<int> result;
-    result.append(item->id());
+    QList<int> result = { item->id() };
 
     for (int i = 0; i < item->childCount(); i++) {
         result.append(childIds(item->child(i)));
