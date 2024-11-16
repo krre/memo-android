@@ -14,11 +14,11 @@ Dialog {
     onVisibleChanged: if (!visible) root.destroy()
 
     Label {
-        text: qsTr("<h3>%1 %2</h3><br> \
-                    Note-taking for quick notes<br><br> \
-                    Based on Qt %3<br> \
-                    Build on %4 %5<br><br> \
-                    <a href='%6'>%6</a><br><br>Copyright © %7, Vladimir Zarypov")
+        text: qsTr(`<h3>%1 %2</h3><br>
+                    Note-taking for quick notes<br><br>
+                    Based on Qt %3<br>
+                    Build on %4 %5<br><br>
+                    <a href='%6'>%6</a><br><br>Copyright © %7, Vladimir Zarypov`)
         .arg(app.name).arg(app.version).arg(app.qtVersion)
         .arg(app.buildDate).arg(app.buildTime)
         .arg(app.url).arg(app.years)

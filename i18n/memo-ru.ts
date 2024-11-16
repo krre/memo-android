@@ -9,9 +9,17 @@
         <translation>О программе</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;                     Note-taking for quick notes&lt;br&gt;&lt;br&gt;                     Based on Qt %3&lt;br&gt;                     Build on %4 %5&lt;br&gt;&lt;br&gt;                     &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
+        <location line="+8"/>
+        <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;
+                    Note-taking for quick notes&lt;br&gt;&lt;br&gt;
+                    Based on Qt %3&lt;br&gt;
+                    Build on %4 %5&lt;br&gt;&lt;br&gt;
+                    &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
         <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;                     Note-taking for quick notes&lt;br&gt;&lt;br&gt;                     Based on Qt %3&lt;br&gt;                     Build on %4 %5&lt;br&gt;&lt;br&gt;                     &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
+        <translation type="vanished">&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
     </message>
 </context>
 <context>
@@ -50,7 +58,7 @@
 <context>
     <name>CreatePage</name>
     <message>
-        <location filename="../qml/page/database/CreatePage.qml" line="+9"/>
+        <location filename="../qml/page/database/CreatePage.qml" line="+8"/>
         <source>Create Database</source>
         <translation>Создать базу данных</translation>
     </message>
@@ -142,7 +150,7 @@
         <translation>Вы желаете удалить заметку?</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+37"/>
         <source>Open</source>
         <translation>Открыть</translation>
     </message>
