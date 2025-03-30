@@ -10,10 +10,10 @@ Application::Application(int& argc, char* argv[]) : QGuiApplication(argc, argv) 
 }
 
 void Application::installTranslators() {
-    auto memoTranslator = new QTranslator(this);
     QString language = QLocale::system().name().split("_").first();
+    auto appTranslator = new QTranslator(this);
 
-    if (memoTranslator->load("memo-" + language, ":/i18n")) {
-        installTranslator(memoTranslator);
+    if (appTranslator->load(QString("%1-%2").arg(PROJECT_NAME, language), ":/i18n")) {
+        installTranslator(appTranslator);
     }
 }
