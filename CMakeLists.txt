@@ -12,11 +12,11 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 configure_file(cpp/config.h.in config.h @ONLY)
 
-qt_add_executable(memo
+qt_add_executable(${PROJECT_NAME}
     cpp/main.cpp
 )
 
-qt_add_qml_module(memo
+qt_add_qml_module(${PROJECT_NAME}
     URI memo.android
     NO_RESOURCE_TARGET_PATH
 
@@ -76,11 +76,11 @@ qt_add_qml_module(memo
         cpp/treeview/TreeModel.cpp cpp/treeview/TreeModel.h
 )
 
-SET(TS_SOURCE i18n/memo-ru.ts)
+SET(TS_SOURCE i18n/${PROJECT_NAME}-ru.ts)
 
-qt_add_translations(memo
+qt_add_translations(${PROJECT_NAME}
     TS_FILES ${TS_SOURCE}
-    SOURCE_TARGETS memo
+    SOURCE_TARGETS ${PROJECT_NAME}
     # LUPDATE_OPTIONS -no-obsolete
 )
 
@@ -95,7 +95,7 @@ add_custom_target(other
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(memo PROPERTIES
+set_target_properties(${PROJECT_NAME} PROPERTIES
     OUTPUT_NAME "Memo"
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appmemo
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
@@ -105,7 +105,7 @@ set_target_properties(memo PROPERTIES
     QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
 )
 
-target_link_libraries(memo PRIVATE
+target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt6::Quick
     Qt6::QuickControls2
     Qt6::Sql
@@ -113,7 +113,7 @@ target_link_libraries(memo PRIVATE
 
 include(GNUInstallDirs)
 
-install(TARGETS memo
+install(TARGETS ${PROJECT_NAME}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
