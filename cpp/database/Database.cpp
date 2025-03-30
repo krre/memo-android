@@ -1,7 +1,10 @@
 #include "Database.h"
 #include "Migrater.h"
+#include <QSqlQuery>
+#include <QSqlRecord>
+#include <QSqlError>
 #include <QStandardPaths>
-#include <QtSql>
+#include <QDir>
 #include <QDebug>
 
 Database::Database(QObject* parent) : QObject(parent) {
