@@ -17,7 +17,7 @@ public:
     static constexpr auto Version = PROJECT_VERSION;
     static constexpr auto QtVersion = QT_VERSION_STR;
     static constexpr auto Url = "https://github.com/krre/memo-android";
-    static constexpr auto Years = "2024";
+    static constexpr auto Years = "2024-2025";
     static constexpr auto BuildDate = __DATE__;
     static constexpr auto BuildTime = __TIME__;
 
