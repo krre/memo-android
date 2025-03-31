@@ -3,10 +3,11 @@ cmake_minimum_required(VERSION 3.22)
 project(memo VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(REQUIRED_QT_VERSION 6.8)
 
-find_package(Qt6 6.6 REQUIRED COMPONENTS Quick QuickControls2 Sql LinguistTools)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2 Sql LinguistTools)
 
-qt_standard_project_setup(REQUIRES 6.6)
+qt_standard_project_setup(REQUIRES ${REQUIRED_QT_VERSION})
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
