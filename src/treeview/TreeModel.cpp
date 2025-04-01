@@ -1,6 +1,6 @@
 #include "TreeModel.h"
 #include "TreeItem.h"
-#include "src/database/Database.h"
+#include "database/Database.h"
 #include <QMimeData>
 #include <QIODevice>
 
