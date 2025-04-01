@@ -29,9 +29,9 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/pages/database/ConnectPage.qml
         qml/pages/NamePage.qml
         qml/pages/database/DatabasePage.qml
-        qml/pages/view/NoteTreePage.qml
-        qml/pages/view/NotePage.qml
-        qml/pages/view/NameDialog.qml
+        qml/pages/treeview/NoteTreePage.qml
+        qml/pages/treeview/NotePage.qml
+        qml/pages/treeview/NameDialog.qml
 
     RESOURCES
         icons/memo/20x20/add_box.png

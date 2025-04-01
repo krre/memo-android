@@ -4,7 +4,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Memo
 import "pages/database"
-import "pages/view"
+import "pages/treeview"
 
 ApplicationWindow {
     id: root
