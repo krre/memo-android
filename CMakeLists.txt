@@ -11,10 +11,10 @@ qt_standard_project_setup(REQUIRES ${REQUIRED_QT_VERSION})
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-configure_file(cpp/config.h.in config.h @ONLY)
+configure_file(src/config.h.in config.h @ONLY)
 
 qt_add_executable(${PROJECT_NAME}
-    cpp/main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(${PROJECT_NAME}
@@ -70,11 +70,11 @@ qt_add_qml_module(${PROJECT_NAME}
         qtquickcontrols2.conf
 
     SOURCES
-        cpp/core/Application.h cpp/core/Application.cpp
-        cpp/database/Database.h cpp/database/Database.cpp
-        cpp/database/Migrater.h cpp/database/Migrater.cpp
-        cpp/treeview/TreeItem.cpp cpp/treeview/TreeItem.h
-        cpp/treeview/TreeModel.cpp cpp/treeview/TreeModel.h
+        src/core/Application.h src/core/Application.cpp
+        src/database/Database.h src/database/Database.cpp
+        src/database/Migrater.h src/database/Migrater.cpp
+        src/treeview/TreeItem.cpp src/treeview/TreeItem.h
+        src/treeview/TreeModel.cpp src/treeview/TreeModel.h
 )
 
 SET(TS_SOURCE i18n/${PROJECT_NAME}-ru.ts)
@@ -89,7 +89,7 @@ qt_add_translations(${PROJECT_NAME}
 add_custom_target(other
     SOURCES
     README.md
-    cpp/config.h.in
+    src/config.h.in
     ${TS_SOURCE}
 )
 
