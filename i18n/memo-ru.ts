@@ -25,7 +25,7 @@
 <context>
     <name>ConnectPage</name>
     <message>
-        <location filename="../qml/page/database/ConnectPage.qml" line="+8"/>
+        <location filename="../qml/pages/database/ConnectPage.qml" line="+8"/>
         <source>Connect to Database</source>
         <translation>Подключиться к базе данных</translation>
     </message>
@@ -58,7 +58,7 @@
 <context>
     <name>CreatePage</name>
     <message>
-        <location filename="../qml/page/database/CreatePage.qml" line="+8"/>
+        <location filename="../qml/pages/database/CreatePage.qml" line="+8"/>
         <source>Create Database</source>
         <translation>Создать базу данных</translation>
     </message>
@@ -86,7 +86,7 @@
 <context>
     <name>DatabasePage</name>
     <message>
-        <location filename="../qml/page/database/DatabasePage.qml" line="+7"/>
+        <location filename="../qml/pages/database/DatabasePage.qml" line="+7"/>
         <source>Database</source>
         <translation>База данных</translation>
     </message>
@@ -127,7 +127,7 @@
 <context>
     <name>NameDialog</name>
     <message>
-        <location filename="../qml/page/view/NameDialog.qml" line="+20"/>
+        <location filename="../qml/pages/view/NameDialog.qml" line="+20"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -135,7 +135,7 @@
 <context>
     <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/page/view/NoteTreePage.qml" line="+41"/>
+        <location filename="../qml/pages/view/NoteTreePage.qml" line="+41"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -168,7 +168,7 @@
 <context>
     <name>OpenPage</name>
     <message>
-        <location filename="../qml/page/database/OpenPage.qml" line="+9"/>
+        <location filename="../qml/pages/database/OpenPage.qml" line="+9"/>
         <source>Open Database</source>
         <translation>Открыть базу данных</translation>
     </message>

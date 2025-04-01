@@ -24,14 +24,14 @@ qt_add_qml_module(${PROJECT_NAME}
     QML_FILES
         qml/Main.qml
         qml/AboutDialog.qml
-        qml/page/database/CreatePage.qml
-        qml/page/database/OpenPage.qml
-        qml/page/database/ConnectPage.qml
-        qml/page/NamePage.qml
-        qml/page/database/DatabasePage.qml
-        qml/page/view/NoteTreePage.qml
-        qml/page/view/NotePage.qml
-        qml/page/view/NameDialog.qml
+        qml/pages/database/CreatePage.qml
+        qml/pages/database/OpenPage.qml
+        qml/pages/database/ConnectPage.qml
+        qml/pages/NamePage.qml
+        qml/pages/database/DatabasePage.qml
+        qml/pages/view/NoteTreePage.qml
+        qml/pages/view/NotePage.qml
+        qml/pages/view/NameDialog.qml
 
     RESOURCES
         icons/memo/20x20/add_box.png

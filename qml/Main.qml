@@ -3,8 +3,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import Memo
-import "page/database"
-import "page/view"
+import "pages/database"
+import "pages/view"
 
 ApplicationWindow {
     id: root
