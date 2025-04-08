@@ -9,9 +9,6 @@
 int main(int argc, char* argv[]) {
     Application app(argc, argv);
 
-    QIcon::setThemeSearchPaths({ ":/assets/icons" });
-    // QIcon::setThemeName("memo");
-
     QQuickStyle::setStyle("Material");
 
     qmlRegisterType<Database>("Memo", 1, 0, "Database");
