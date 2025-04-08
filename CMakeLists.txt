@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 4.0)
 project(memo VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(REQUIRED_QT_VERSION 6.8)
+set(REQUIRED_QT_VERSION 6.9)
 
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2 Sql LinguistTools)
 
