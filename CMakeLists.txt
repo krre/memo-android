@@ -34,39 +34,14 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/pages/treeview/NameDialog.qml
 
     RESOURCES
-        assets/icons/memo/20x20/add_box.png
-        assets/icons/memo/20x20/back.png
-        assets/icons/memo/20x20/cancel.png
-        assets/icons/memo/20x20/deselect.png
-        assets/icons/memo/20x20/drawer.png
-        assets/icons/memo/20x20/edit.png
-        assets/icons/memo/20x20/menu.png
-        assets/icons/memo/20x20/save.png
-        assets/icons/memo/20x20@2/add_box.png
-        assets/icons/memo/20x20@2/back.png
-        assets/icons/memo/20x20@2/cancel.png
-        assets/icons/memo/20x20@2/deselect.png
-        assets/icons/memo/20x20@2/drawer.png
-        assets/icons/memo/20x20@2/edit.png
-        assets/icons/memo/20x20@2/menu.png
-        assets/icons/memo/20x20@2/save.png
-        assets/icons/memo/20x20@3/add_box.png
-        assets/icons/memo/20x20@3/back.png
-        assets/icons/memo/20x20@3/cancel.png
-        assets/icons/memo/20x20@3/deselect.png
-        assets/icons/memo/20x20@3/drawer.png
-        assets/icons/memo/20x20@3/edit.png
-        assets/icons/memo/20x20@3/menu.png
-        assets/icons/memo/20x20@3/save.png
-        assets/icons/memo/20x20@4/add_box.png
-        assets/icons/memo/20x20@4/back.png
-        assets/icons/memo/20x20@4/cancel.png
-        assets/icons/memo/20x20@4/deselect.png
-        assets/icons/memo/20x20@4/drawer.png
-        assets/icons/memo/20x20@4/edit.png
-        assets/icons/memo/20x20@4/menu.png
-        assets/icons/memo/20x20@4/save.png
-        assets/icons/memo/index.theme
+        assets/icons/square-plus.svg
+        assets/icons/arrow-left.svg
+        assets/icons/menu.svg
+        assets/icons/dots-vertical.svg
+        assets/icons/deselect.svg
+        assets/icons/edit.svg
+        assets/icons/device-floppy.svg
+        assets/icons/cancel.svg
         qtquickcontrols2.conf
 
     SOURCES

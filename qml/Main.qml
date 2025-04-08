@@ -91,7 +91,8 @@ ApplicationWindow {
 
     Action {
         id: navigateAction
-        icon.name: stackView.depth > 1 ? "back" : "drawer"
+        icon.source: stackView.depth > 1 ? "qrc:/assets/icons/arrow-left.svg" : "qrc:/assets/icons/menu.svg"
+
         onTriggered: {
             if (stackView.depth > 1) {
                 stackView.pop()
@@ -108,7 +109,7 @@ ApplicationWindow {
 
     Action {
         id: optionsMenuAction
-        icon.name: "menu"
+        icon.source: "qrc:/assets/icons/dots-vertical.svg"
         onTriggered: optionsMenu.open()
     }
 

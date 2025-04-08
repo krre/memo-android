@@ -11,7 +11,7 @@ NamePage {
     name: database.name
     toolBar:  Row {
         ToolButton {
-            icon.name: "add_box"
+            icon.source: "qrc:/assets/icons/square-plus.svg"
             onClicked: {
                 addNoteDialog.name = ""
                 addNoteDialog.show()
@@ -19,7 +19,7 @@ NamePage {
         }
 
         ToolButton {
-            icon.name: "deselect"
+            icon.source: "qrc:/assets/icons/deselect.svg"
             enabled: treeView.selectionModel.currentIndex.valid
             onClicked: treeView.selectionModel.clear()
         }

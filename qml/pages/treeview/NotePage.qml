@@ -12,7 +12,7 @@ NamePage {
 
     toolBar: Row {
         ToolButton {
-            icon.name: "edit"
+            icon.source: "qrc:/assets/icons/edit.svg"
             visible: !editMode
             onClicked: {
                 editMode = true
@@ -21,7 +21,7 @@ NamePage {
         }
 
         ToolButton {
-            icon.name: "save"
+            icon.source: "qrc:/assets/icons/device-floppy.svg"
             visible: editMode
             onClicked: {
                 database.updateNoteValue(id, "note", textArea.text)
@@ -31,7 +31,7 @@ NamePage {
         }
 
         ToolButton {
-            icon.name: "cancel"
+            icon.source: "qrc:/assets/icons/cancel.svg"
             visible: editMode
             onClicked: {
                 textArea.text = database.noteValue(id, "note")
