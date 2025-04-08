@@ -4,7 +4,6 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
-#include <QIcon>
 
 int main(int argc, char* argv[]) {
     Application app(argc, argv);
