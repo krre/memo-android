@@ -15,11 +15,12 @@ int main(int argc, char* argv[]) {
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("app", &app);
-    engine.load(QUrl("qrc:/qml/Main.qml"));
 
-    if (engine.rootObjects().isEmpty()) {
-        return EXIT_FAILURE;
-    }
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed, &app, [] () {
+        QCoreApplication::exit(EXIT_FAILURE);
+    }, Qt::QueuedConnection);
+
+    engine.loadFromModule("memo", "Main");
 
     return app.exec();
 }
