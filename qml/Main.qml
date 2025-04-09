@@ -8,10 +8,10 @@ import "pages/treeview"
 
 ApplicationWindow {
     id: root
+    title: app.name
     width: 400
     height: 770
     visible: true
-    title: app.name
 
     Component.onCompleted: {
         x = (Screen.desktopAvailableWidth - width) / 2
