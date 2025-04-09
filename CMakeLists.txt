@@ -18,7 +18,7 @@ qt_add_executable(${PROJECT_NAME}
 )
 
 qt_add_qml_module(${PROJECT_NAME}
-    URI memo.android
+    URI memo
     NO_RESOURCE_TARGET_PATH
 
     QML_FILES
