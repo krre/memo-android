@@ -4,7 +4,7 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="+9"/>
+        <location filename="../../qml/dialogs/AboutDialog.qml" line="+9"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
@@ -17,15 +17,11 @@
                     &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
         <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
     </message>
-    <message>
-        <source>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;                     Note-taking for quick notes&lt;br&gt;&lt;br&gt;                     Based on Qt %3&lt;br&gt;                     Build on %4 %5&lt;br&gt;&lt;br&gt;                     &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
-        <translation type="vanished">&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
-    </message>
 </context>
 <context>
     <name>ConnectPage</name>
     <message>
-        <location filename="../qml/pages/database/ConnectPage.qml" line="+8"/>
+        <location filename="../../qml/pages/database/ConnectPage.qml" line="+8"/>
         <source>Connect to Database</source>
         <translation>Подключиться к базе данных</translation>
     </message>
@@ -58,7 +54,7 @@
 <context>
     <name>CreatePage</name>
     <message>
-        <location filename="../qml/pages/database/CreatePage.qml" line="+8"/>
+        <location filename="../../qml/pages/database/CreatePage.qml" line="+8"/>
         <source>Create Database</source>
         <translation>Создать базу данных</translation>
     </message>
@@ -86,7 +82,7 @@
 <context>
     <name>DatabasePage</name>
     <message>
-        <location filename="../qml/pages/database/DatabasePage.qml" line="+7"/>
+        <location filename="../../qml/pages/database/DatabasePage.qml" line="+7"/>
         <source>Database</source>
         <translation>База данных</translation>
     </message>
@@ -109,12 +105,7 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+60"/>
-        <source>About</source>
-        <translation>О программе</translation>
-    </message>
-    <message>
-        <location line="+71"/>
+        <location filename="../../qml/Main.qml" line="+110"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -125,9 +116,17 @@
     </message>
 </context>
 <context>
+    <name>MenuToolButton</name>
+    <message>
+        <location filename="../../qml/main/MenuToolButton.qml" line="+18"/>
+        <source>About</source>
+        <translation type="unfinished">О программе</translation>
+    </message>
+</context>
+<context>
     <name>NameDialog</name>
     <message>
-        <location filename="../qml/pages/treeview/NameDialog.qml" line="+20"/>
+        <location filename="../../qml/pages/treeview/NameDialog.qml" line="+20"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -135,7 +134,7 @@
 <context>
     <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/pages/treeview/NoteTreePage.qml" line="+41"/>
+        <location filename="../../qml/pages/treeview/NoteTreePage.qml" line="+41"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -168,7 +167,7 @@
 <context>
     <name>OpenPage</name>
     <message>
-        <location filename="../qml/pages/database/OpenPage.qml" line="+9"/>
+        <location filename="../../qml/pages/database/OpenPage.qml" line="+9"/>
         <source>Open Database</source>
         <translation>Открыть базу данных</translation>
     </message>

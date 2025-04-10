@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import Memo
+import "main"
 import "pages/database"
 import "pages/treeview"
 import "dialogs"
@@ -49,20 +50,7 @@ ApplicationWindow {
                 data: stackView.currentItem ? stackView.currentItem.toolBar : []
             }
 
-            ToolButton {
-                action: optionsMenuAction
-
-                Menu {
-                    id: optionsMenu
-                    x: parent.width - width
-                    transformOrigin: Menu.TopRight
-
-                    Action {
-                        text: qsTr("About")
-                        onTriggered: aboutDialogComp.createObject(root)
-                    }
-                }
-            }
+            MenuToolButton {}
         }
     }
 
@@ -103,17 +91,6 @@ ApplicationWindow {
         }
     }
 
-    Shortcut {
-        sequence: "Menu"
-        onActivated: optionsMenuAction.trigger()
-    }
-
-    Action {
-        id: optionsMenuAction
-        icon.source: "qrc:/assets/icons/dots-vertical.svg"
-        onTriggered: optionsMenu.open()
-    }
-
     Action {
         id: quitAction
         shortcut: "Ctrl+Q"
@@ -149,11 +126,6 @@ ApplicationWindow {
 
     Database {
         id: database
-    }
-
-    Component {
-        id: aboutDialogComp
-        AboutDialog {}
     }
 
     Component {
