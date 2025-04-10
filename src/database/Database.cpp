@@ -150,7 +150,7 @@ QSqlQuery Database::exec(const QString& sql, const QVariantMap& params) const {
     QSqlQuery query;
     query.prepare(sql);
 
-    for (auto it = params.cbegin(); it != params.cend(); it++) {
+    for (auto it = params.cbegin(); it != params.cend(); ++it) {
         query.bindValue(":" + it.key(), it.value());
     }
 
@@ -171,7 +171,7 @@ void Database::setName(const QString& name) {
 QVariantMap Database::queryToNote(const QSqlQuery& query) const {
     QVariantMap result;
 
-    for (int i = 0; i < query.record().count(); i++) {
+    for (int i = 0; i < query.record().count(); ++i) {
         result[query.record().fieldName(i)] = query.record().value(i);
     }
 
