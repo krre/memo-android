@@ -65,9 +65,9 @@ bool Database::isExists(const QString& name) {
 
 QStringList Database::list() const {
     QStringList result;
-    QDir dir(directory());
+    const auto fileInfos = QDir(directory()).entryInfoList({ "*.db" }, QDir::Files);
 
-    for (const auto& fi : dir.entryInfoList({ "*.db" }, QDir::Files)) {
+    for (const auto& fi : fileInfos) {
         QString name = fi.fileName().left(fi.fileName().size() - 3); // Name without extension .db
         result.append(name);
     }
