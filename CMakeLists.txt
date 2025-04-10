@@ -23,7 +23,7 @@ qt_add_qml_module(${PROJECT_NAME}
 
     QML_FILES
         qml/Main.qml
-        qml/AboutDialog.qml
+        qml/dialogs/AboutDialog.qml
         qml/pages/database/CreatePage.qml
         qml/pages/database/OpenPage.qml
         qml/pages/database/ConnectPage.qml
