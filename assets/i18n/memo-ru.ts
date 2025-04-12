@@ -15,7 +15,7 @@
                     Based on Qt %3&lt;br&gt;
                     Build on %4 %5&lt;br&gt;&lt;br&gt;
                     &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Vladimir Zarypov</source>
-        <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;                         &lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
+        <translation>&lt;h3&gt;%1 %2&lt;/h3&gt;&lt;br&gt;Менеджер быстрых заметок&lt;br&gt;&lt;br&gt;Основано на Qt %3&lt;br&gt;Собрано %4 %5&lt;br&gt;&lt;br&gt;&lt;a href=&apos;%6&apos;&gt;%6&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © %7, Владимир Зарыпов</translation>
     </message>
 </context>
 <context>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../../qml/main/MenuToolButton.qml" line="+18"/>
         <source>About</source>
-        <translation type="unfinished">О программе</translation>
+        <translation>О программе</translation>
     </message>
 </context>
 <context>
