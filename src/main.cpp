@@ -10,8 +10,8 @@ int main(int argc, char* argv[]) {
 
     QQuickStyle::setStyle("Material");
 
-    qmlRegisterType<Database>("Memo", 1, 0, "Database");
-    qmlRegisterType<TreeModel>("Memo", 1, 0, "TreeModel");
+    qmlRegisterType<Database>(PROJECT_TITLE, 1, 0, "Database");
+    qmlRegisterType<TreeModel>(PROJECT_TITLE, 1, 0, "TreeModel");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("app", &app);

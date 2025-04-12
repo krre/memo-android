@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 4.0)
 
 project(memo VERSION 1.0.0)
 
+set(PROJECT_TITLE Memo)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(REQUIRED_QT_VERSION 6.9)
 
@@ -73,7 +74,7 @@ add_custom_target(other
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    OUTPUT_NAME "Memo"
+    OUTPUT_NAME ${PROJECT_TITLE}
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appmemo
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}

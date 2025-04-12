@@ -12,8 +12,8 @@ class Application : public QGuiApplication {
     Q_PROPERTY(QString buildDate READ buildDate CONSTANT)
     Q_PROPERTY(QString buildTime READ buildTime CONSTANT)
 public:
-    static constexpr auto Organization = "Memo";
-    static constexpr auto Name = "Memo";
+    static constexpr auto Organization = PROJECT_TITLE;
+    static constexpr auto Name = PROJECT_TITLE;
     static constexpr auto Version = PROJECT_VERSION;
     static constexpr auto QtVersion = QT_VERSION_STR;
     static constexpr auto Url = "https://github.com/krre/memo-android";
