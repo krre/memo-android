@@ -67,7 +67,6 @@ add_custom_target(other
     SOURCES
     README.md
     src/config.h.in
-    ${TS_SOURCE}
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
