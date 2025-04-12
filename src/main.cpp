@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
         QCoreApplication::exit(EXIT_FAILURE);
     }, Qt::QueuedConnection);
 
-    engine.loadFromModule("memo", "Main");
+    engine.loadFromModule(PROJECT_NAME, "Main");
 
     return app.exec();
 }
