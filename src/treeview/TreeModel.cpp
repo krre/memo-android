@@ -232,7 +232,7 @@ void TreeModel::renameNote(const QModelIndex& index, const QString& title) {
 }
 
 void TreeModel::removeNote(const QModelIndex& index) {
-    auto ids = childIds(item(index));
+    const auto ids = childIds(item(index));
     removeRow(index.row(), index.parent());
 
     auto parentItem = item(index.parent());
