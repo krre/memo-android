@@ -13,7 +13,7 @@ void Application::installTranslators() {
     QString language = QLocale::system().name().split("_").first();
     auto appTranslator = new QTranslator(this);
 
-    if (appTranslator->load(QString("%1-%2").arg(PROJECT_NAME, language), ":/i18n")) {
+    if (appTranslator->load(QString("%1_%2").arg(PROJECT_NAME, language), ":/i18n")) {
         installTranslator(appTranslator);
     }
 }

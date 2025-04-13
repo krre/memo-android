@@ -8,7 +8,10 @@ set(REQUIRED_QT_VERSION 6.9)
 
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2 Sql LinguistTools)
 
-qt_standard_project_setup(REQUIRES ${REQUIRED_QT_VERSION})
+qt_standard_project_setup(
+    REQUIRES ${REQUIRED_QT_VERSION}
+    I18N_TRANSLATED_LANGUAGES ru
+)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -54,11 +57,10 @@ qt_add_qml_module(${PROJECT_NAME}
         src/treeview/TreeModel.cpp src/treeview/TreeModel.h
 )
 
-SET(TS_SOURCE assets/i18n/${PROJECT_NAME}-ru.ts)
-
 qt_add_translations(${PROJECT_NAME}
-    TS_FILES ${TS_SOURCE}
     SOURCE_TARGETS ${PROJECT_NAME}
+    NO_GENERATE_PLURALS_TS_FILE
+    TS_OUTPUT_DIRECTORY i18n
     # LUPDATE_OPTIONS -no-obsolete
 )
 
