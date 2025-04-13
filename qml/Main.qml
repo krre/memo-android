@@ -85,41 +85,14 @@ ApplicationWindow {
             if (stackView.depth > 1) {
                 stackView.pop()
             } else {
-                drawer.open()
+                navigationMenu.open()
             }
         }
     }
 
-    Drawer {
-        id: drawer
+    NavigationMenu {
+        id: navigationMenu
         height: parent.height
-
-        Column {
-            anchors.fill: parent
-
-            ItemDelegate {
-                width: parent.width
-                visible: database.isOpen
-                text: qsTr("Close")
-
-                onClicked: {
-                    database.close()
-                    stackView.clear()
-                    stackView.push(databasePageComp)
-                    drawer.close()
-                }
-            }
-
-            ItemDelegate {
-                width: parent.width
-                text: qsTr("Exit")
-
-                action: Action {
-                    shortcut: "Ctrl+Q"
-                    onTriggered: Qt.quit()
-                }
-            }
-        }
     }
 
     Database {

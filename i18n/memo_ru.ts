@@ -69,7 +69,7 @@
         <translation>Вы желаете его перезаписать?</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -103,19 +103,6 @@
     </message>
 </context>
 <context>
-    <name>Main</name>
-    <message>
-        <location filename="../qml/Main.qml" line="+109"/>
-        <source>Close</source>
-        <translation>Закрыть</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Exit</source>
-        <translation>Выйти</translation>
-    </message>
-</context>
-<context>
     <name>NameDialog</name>
     <message>
         <location filename="../qml/pages/treeview/NameDialog.qml" line="+20"/>
@@ -124,9 +111,22 @@
     </message>
 </context>
 <context>
+    <name>NavigationMenu</name>
+    <message>
+        <location filename="../qml/main/NavigationMenu.qml" line="+13"/>
+        <source>Close</source>
+        <translation>Закрыть</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Exit</source>
+        <translation>Выйти</translation>
+    </message>
+</context>
+<context>
     <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/pages/treeview/NoteTreePage.qml" line="+41"/>
+        <location filename="../qml/pages/treeview/NoteTreePage.qml" line="+43"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -141,17 +141,17 @@
         <translation>Вы желаете удалить заметку?</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+38"/>
         <source>Open</source>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
