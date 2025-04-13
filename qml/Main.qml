@@ -49,7 +49,7 @@ ApplicationWindow {
                 data: stackView.currentItem ? stackView.currentItem.toolBar : []
             }
 
-            MenuToolButton {}
+            OptionsMenuToolButton {}
         }
     }
 
