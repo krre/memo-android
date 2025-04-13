@@ -116,14 +116,6 @@
     </message>
 </context>
 <context>
-    <name>MenuToolButton</name>
-    <message>
-        <location filename="../qml/main/MenuToolButton.qml" line="+17"/>
-        <source>About</source>
-        <translation>О программе</translation>
-    </message>
-</context>
-<context>
     <name>NameDialog</name>
     <message>
         <location filename="../qml/pages/treeview/NameDialog.qml" line="+20"/>
@@ -190,6 +182,14 @@
         <location line="+5"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
+    </message>
+</context>
+<context>
+    <name>OptionsMenu</name>
+    <message>
+        <location filename="../qml/main/OptionsMenu.qml" line="+8"/>
+        <source>About</source>
+        <translation>О программе</translation>
     </message>
 </context>
 </TS>

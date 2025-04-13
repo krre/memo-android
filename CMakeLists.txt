@@ -27,6 +27,7 @@ qt_add_qml_module(${PROJECT_NAME}
 
     QML_FILES
         qml/Main.qml
+        qml/main/OptionsMenu.qml
         qml/main/MenuToolButton.qml
         qml/main/AboutDialog.qml
         qml/pages/database/CreatePage.qml
