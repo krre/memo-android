@@ -4,7 +4,7 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../qml/dialogs/AboutDialog.qml" line="+9"/>
+        <location filename="../qml/main/AboutDialog.qml" line="+9"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
@@ -105,7 +105,7 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+110"/>
+        <location filename="../qml/Main.qml" line="+109"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -118,7 +118,7 @@
 <context>
     <name>MenuToolButton</name>
     <message>
-        <location filename="../qml/main/MenuToolButton.qml" line="+18"/>
+        <location filename="../qml/main/MenuToolButton.qml" line="+17"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>

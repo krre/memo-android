@@ -6,7 +6,6 @@ import Memo
 import "main"
 import "pages/database"
 import "pages/treeview"
-import "dialogs"
 
 ApplicationWindow {
     id: root
