@@ -26,8 +26,8 @@ public:
     bool canDropMimeData(const QMimeData* mimeData, Qt::DropAction action, int row, int column, const QModelIndex& parent) const override;
     bool dropMimeData(const QMimeData* mimeData, Qt::DropAction action, int row, int column, const QModelIndex& parent) override;
 
-    bool insertRows(int position, int rows, const QModelIndex& parent = QModelIndex()) override;
-    bool removeRows(int position, int rows, const QModelIndex& parent = QModelIndex()) override;
+    bool insertRows(int position, int rows, const QModelIndex& parent = {}) override;
+    bool removeRows(int position, int rows, const QModelIndex& parent = {}) override;
     bool moveRows(const QModelIndex& sourceParent, int sourceRow, int count, const QModelIndex& destinationParent, int destinationChild) override;
 
     Q_INVOKABLE void insertNotes();
