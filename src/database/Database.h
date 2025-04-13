@@ -6,6 +6,7 @@
 class Database : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
+    Q_PROPERTY(bool isOpen READ isOpen NOTIFY isOpenChanged)
 public:
     struct Note {
         int id;
@@ -25,6 +26,7 @@ public:
     Q_INVOKABLE QStringList list() const;
 
     QString name() const;
+    bool isOpen() const;
 
     int insertNote(int parentId, int pos, int depth, const QString& title) const;
     Q_INVOKABLE void insertRemoteNote(int id, int parentId, int pos, int depth, const QString& title, const QString& note) const;
@@ -40,6 +42,7 @@ public:
 
 signals:
     void nameChanged(const QString& name);
+    void isOpenChanged(bool isOpen);
 
 private:
     void setName(const QString& name);

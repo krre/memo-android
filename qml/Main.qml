@@ -106,7 +106,7 @@ ApplicationWindow {
 
             ItemDelegate {
                 width: parent.width
-                visible: database.name
+                visible: database.isOpen
                 text: qsTr("Close")
                 onClicked: {
                     database.close()

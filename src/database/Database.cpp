@@ -33,17 +33,19 @@ void Database::open(const QString& name) {
     Migrater migrater(this);
     migrater.run();
 
+    emit isOpenChanged(true);
     setName(normalizeName(name));
 
     qInfo().noquote() << "Database opened:" << filePath(name);
 }
 
 void Database::close() {
-    if (m_name.isEmpty()) return;
+    if (!isOpen()) return;
 
     m_db.close();
     QString name = m_name;
     setName("");
+    emit isOpenChanged(false);
     qInfo().noquote() << "Database closed:" << filePath(name);
 }
 
@@ -77,6 +79,10 @@ QStringList Database::list() const {
 
 QString Database::name() const {
     return m_name;
+}
+
+bool Database::isOpen() const {
+    return m_db.isOpen();
 }
 
 int Database::insertNote(int parentId, int pos, int depth, const QString& title) const {
