@@ -16,7 +16,7 @@ NamePage {
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
             database.remove(contextMenu.dbName)
-            listView.model = database.list()
+            listView.model = database.files()
          }
     }
 
@@ -27,14 +27,14 @@ NamePage {
         onAccepted: {
             if (!name) return
             database.rename(contextMenu.dbName, name)
-            listView.model = database.list()
+            listView.model = database.files()
         }
     }
 
     ListView {
         id: listView
         anchors.fill: parent
-        model: database.list()
+        model: database.files()
         delegate: ItemDelegate {
             id: delegate
             width: ListView.view.width

@@ -65,7 +65,7 @@ bool Database::isExists(const QString& name) {
     return QFileInfo::exists(filePath(name));
 }
 
-QStringList Database::list() const {
+QStringList Database::files() const {
     QStringList result;
     const auto fileInfos = QDir(directory()).entryInfoList({ "*.db" }, QDir::Files);
 
