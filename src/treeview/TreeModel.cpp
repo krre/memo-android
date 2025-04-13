@@ -247,7 +247,7 @@ void TreeModel::removeNote(const QModelIndex& index) {
     }
 }
 
-QVariantMap TreeModel::note(const QModelIndex& index) {
+QVariantMap TreeModel::note(const QModelIndex& index) const {
     return m_database->note(item(index)->id());
 }
 

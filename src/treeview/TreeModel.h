@@ -34,7 +34,7 @@ public:
     Q_INVOKABLE QModelIndex insertNote(const QModelIndex& parent, const QString& title);
     Q_INVOKABLE void renameNote(const QModelIndex& index, const QString& title);
     Q_INVOKABLE void removeNote(const QModelIndex& index);
-    Q_INVOKABLE QVariantMap note(const QModelIndex& index);
+    Q_INVOKABLE QVariantMap note(const QModelIndex& index) const;
 
     Database* database() const;
     void setDatabase(Database* database);
