@@ -14,6 +14,7 @@ NamePage {
         ToolButton {
             icon.source: "qrc:/assets/icons/edit.svg"
             visible: !editMode
+
             onClicked: {
                 editMode = true
                 textArea.forceActiveFocus()
@@ -23,6 +24,7 @@ NamePage {
         ToolButton {
             icon.source: "qrc:/assets/icons/device-floppy.svg"
             visible: editMode
+
             onClicked: {
                 database.updateNoteValue(id, "note", textArea.text)
                 editMode = false
@@ -33,6 +35,7 @@ NamePage {
         ToolButton {
             icon.source: "qrc:/assets/icons/cancel.svg"
             visible: editMode
+
             onClicked: {
                 textArea.text = database.noteValue(id, "note")
                 editMode = false

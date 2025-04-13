@@ -101,6 +101,7 @@ ApplicationWindow {
                 width: parent.width
                 visible: database.isOpen
                 text: qsTr("Close")
+
                 onClicked: {
                     database.close()
                     stackView.clear()

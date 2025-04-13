@@ -17,6 +17,7 @@ NamePage {
         text: qsTr("File already exists")
         informativeText: qsTr("Do you want to overwrite it?")
         buttons: MessageDialog.Yes | MessageDialog.No
+
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.Yes) {
                 create(name.text)
@@ -39,6 +40,7 @@ NamePage {
             Layout.alignment: Qt.AlignRight
             text: qsTr("OK")
             enabled: name.text
+
             onClicked: {
                 if (database.isExists(name.text)) {
                     overwriteDialog.open()

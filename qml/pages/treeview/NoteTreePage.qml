@@ -9,9 +9,11 @@ NamePage {
     id: root
     readonly property bool isTreeView: true
     name: database.name
-    toolBar:  Row {
+
+    toolBar: Row {
         ToolButton {
             icon.source: "qrc:/assets/icons/square-plus.svg"
+
             onClicked: {
                 addNoteDialog.name = ""
                 addNoteDialog.show()
@@ -70,7 +72,7 @@ NamePage {
         onButtonClicked: function (button, role) {
             if (button === MessageDialog.No) return
             treeModel.removeNote(treeView.selectionModel.currentIndex)
-         }
+        }
     }
 
     TreeModel {
@@ -83,6 +85,7 @@ NamePage {
         anchors.fill: parent
         model: treeModel
         selectionModel: ItemSelectionModel {}
+
         delegate: TreeViewDelegate {
             id: delegate
             implicitWidth: treeView.width
@@ -102,6 +105,7 @@ NamePage {
 
             MenuItem {
                 text: qsTr("Open")
+
                 onClicked: {
                     const note = treeModel.note(treeView.selectionModel.currentIndex)
                     pushPage(notePageComp, { "name": note.title, "id": note.id, "note": note.note })
@@ -110,6 +114,7 @@ NamePage {
 
             MenuItem {
                 text: qsTr("Rename")
+
                 onClicked: {
                     renameNoteDialog.name = treeModel.note(treeView.selectionModel.currentIndex).title
                     renameNoteDialog.show()
