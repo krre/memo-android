@@ -14,8 +14,8 @@ void Migrater::run() {
     if (dbVersion == CurrentVersion) return;
 
     for (int i = dbVersion + 1; i <= CurrentVersion; ++i) {
-        migrations[i]();
         qInfo() << "Run database migration" << i;
+        migrations[i]();
     }
 
     setVersion(CurrentVersion);

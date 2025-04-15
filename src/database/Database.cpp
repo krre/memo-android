@@ -30,23 +30,24 @@ void Database::open(const QString& name) {
         return;
     }
 
+    qInfo().noquote() << "Database opened:" << filePath(name);
+
     Migrater migrater(this);
     migrater.run();
 
     emit isOpenChanged(true);
     setName(normalizeName(name));
-
-    qInfo().noquote() << "Database opened:" << filePath(name);
 }
 
 void Database::close() {
     if (!isOpen()) return;
 
     m_db.close();
-    QString name = m_name;
+    qInfo().noquote() << "Database closed:" << filePath(m_name);
+
     setName("");
     emit isOpenChanged(false);
-    qInfo().noquote() << "Database closed:" << filePath(name);
+
 }
 
 void Database::remove(const QString& name) {
