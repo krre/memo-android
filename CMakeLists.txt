@@ -6,7 +6,12 @@ set(PROJECT_TITLE Memo)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(REQUIRED_QT_VERSION 6.9)
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Quick QuickControls2 Sql LinguistTools)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS
+    Quick
+    QuickControls2
+    Sql
+    LinguistTools
+)
 
 qt_standard_project_setup(
     REQUIRES ${REQUIRED_QT_VERSION}
