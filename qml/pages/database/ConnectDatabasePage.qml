@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import "../../components"
 import ".."
 
 NamedPage {
@@ -67,10 +68,10 @@ NamedPage {
             placeholderText: qsTr("Token")
         }
 
-        Button {
+        OkButton {
             Layout.alignment: Qt.AlignRight
-            text: qsTr("OK")
             enabled: ip.text && port.text && token.text && !busyIndicator.running
+
             onClicked: {
                 busyIndicator.running = true
 

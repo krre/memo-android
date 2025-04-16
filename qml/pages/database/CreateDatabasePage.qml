@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import "../../components"
 import ".."
 
 NamedPage {
@@ -36,9 +37,8 @@ NamedPage {
             focus: true
         }
 
-        Button {
+        OkButton {
             Layout.alignment: Qt.AlignRight
-            text: qsTr("OK")
             enabled: name.text
 
             onClicked: {

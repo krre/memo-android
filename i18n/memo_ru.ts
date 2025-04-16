@@ -21,7 +21,7 @@
 <context>
     <name>ConnectDatabasePage</name>
     <message>
-        <location filename="../qml/pages/database/ConnectDatabasePage.qml" line="+8"/>
+        <location filename="../qml/pages/database/ConnectDatabasePage.qml" line="+9"/>
         <source>Connect to Database</source>
         <translation>Подключиться к базе данных</translation>
     </message>
@@ -45,16 +45,11 @@
         <source>Token</source>
         <translation>Токен</translation>
     </message>
-    <message>
-        <location line="+5"/>
-        <source>OK</source>
-        <translation>ОК</translation>
-    </message>
 </context>
 <context>
     <name>CreateDatabasePage</name>
     <message>
-        <location filename="../qml/pages/database/CreateDatabasePage.qml" line="+8"/>
+        <location filename="../qml/pages/database/CreateDatabasePage.qml" line="+9"/>
         <source>Create Database</source>
         <translation>Создать базу данных</translation>
     </message>
@@ -72,11 +67,6 @@
         <location line="+17"/>
         <source>Name</source>
         <translation>Название</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>OK</source>
-        <translation>ОК</translation>
     </message>
 </context>
 <context>
@@ -154,6 +144,14 @@
         <location line="+9"/>
         <source>Remove</source>
         <translation>Удалить</translation>
+    </message>
+</context>
+<context>
+    <name>OkButton</name>
+    <message>
+        <location filename="../qml/components/OkButton.qml" line="+5"/>
+        <source>OK</source>
+        <translation>ОК</translation>
     </message>
 </context>
 <context>
