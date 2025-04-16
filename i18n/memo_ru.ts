@@ -105,7 +105,7 @@
 <context>
     <name>NameDialog</name>
     <message>
-        <location filename="../qml/pages/treeview/NameDialog.qml" line="+20"/>
+        <location filename="../qml/components/NameDialog.qml" line="+20"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -126,7 +126,7 @@
 <context>
     <name>NoteTreePage</name>
     <message>
-        <location filename="../qml/pages/treeview/NoteTreePage.qml" line="+43"/>
+        <location filename="../qml/pages/treeview/NoteTreePage.qml" line="+44"/>
         <source>Add Note</source>
         <translation>Добавить заметку</translation>
     </message>
@@ -159,7 +159,7 @@
 <context>
     <name>OpenDatabasePage</name>
     <message>
-        <location filename="../qml/pages/database/OpenDatabasePage.qml" line="+9"/>
+        <location filename="../qml/pages/database/OpenDatabasePage.qml" line="+10"/>
         <source>Open Database</source>
         <translation>Открыть базу данных</translation>
     </message>

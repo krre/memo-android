@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Dialogs
 import QtQml.Models
 import Memo
+import "../../components"
 import ".."
 
 NamedPage {

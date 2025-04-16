@@ -2,7 +2,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 import "../treeview"
-import ".."
+import "../../components"
+import "../"
 
 NamedPage {
     id: root

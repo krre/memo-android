@@ -36,6 +36,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/main/OptionsMenu.qml
         qml/main/OptionsMenuToolButton.qml
         qml/main/AboutDialog.qml
+        qml/components/NameDialog.qml
         qml/pages/database/CreateDatabasePage.qml
         qml/pages/database/OpenDatabasePage.qml
         qml/pages/database/ConnectDatabasePage.qml
@@ -43,7 +44,6 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/pages/database/DatabasePage.qml
         qml/pages/treeview/NoteTreePage.qml
         qml/pages/treeview/NotePage.qml
-        qml/pages/treeview/NameDialog.qml
 
     RESOURCES
         assets/icons/square-plus.svg
