@@ -36,7 +36,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/main/OptionsMenu.qml
         qml/main/OptionsMenuToolButton.qml
         qml/main/AboutDialog.qml
-        qml/pages/database/CreatePage.qml
+        qml/pages/database/CreateDatabasePage.qml
         qml/pages/database/OpenPage.qml
         qml/pages/database/ConnectPage.qml
         qml/pages/NamedPage.qml

@@ -16,7 +16,7 @@ NamedPage {
 
             Component {
                 id: createPageComp
-                CreatePage {}
+                CreateDatabasePage {}
             }
         }
 

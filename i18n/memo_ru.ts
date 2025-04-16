@@ -52,9 +52,9 @@
     </message>
 </context>
 <context>
-    <name>CreatePage</name>
+    <name>CreateDatabasePage</name>
     <message>
-        <location filename="../qml/pages/database/CreatePage.qml" line="+8"/>
+        <location filename="../qml/pages/database/CreateDatabasePage.qml" line="+8"/>
         <source>Create Database</source>
         <translation>Создать базу данных</translation>
     </message>
