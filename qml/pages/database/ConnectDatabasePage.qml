@@ -43,7 +43,6 @@ NamedPage {
     }
 
     ColumnLayout {
-        anchors.centerIn: parent
         width: parent.width
         spacing: 10
 
