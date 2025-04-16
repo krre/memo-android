@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import ".."
 
-NamePage {
+NamedPage {
     id: root
     required property int id
     required property string note

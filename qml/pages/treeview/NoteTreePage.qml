@@ -5,7 +5,7 @@ import QtQml.Models
 import Memo
 import ".."
 
-NamePage {
+NamedPage {
     id: root
     readonly property bool isTreeView: true
     name: database.name

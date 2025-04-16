@@ -4,7 +4,7 @@ import QtQuick.Dialogs
 import "../treeview"
 import ".."
 
-NamePage {
+NamedPage {
     id: root
     name: qsTr("Open Database")
 

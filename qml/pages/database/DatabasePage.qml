@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import ".."
 
-NamePage {
+NamedPage {
     name: qsTr("Database")
 
     ColumnLayout {

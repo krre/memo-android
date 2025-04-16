@@ -39,7 +39,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/pages/database/CreatePage.qml
         qml/pages/database/OpenPage.qml
         qml/pages/database/ConnectPage.qml
-        qml/pages/NamePage.qml
+        qml/pages/NamedPage.qml
         qml/pages/database/DatabasePage.qml
         qml/pages/treeview/NoteTreePage.qml
         qml/pages/treeview/NotePage.qml

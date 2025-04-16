@@ -4,7 +4,7 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import ".."
 
-NamePage {
+NamedPage {
     name: qsTr("Create Database")
 
     function create(name) {
