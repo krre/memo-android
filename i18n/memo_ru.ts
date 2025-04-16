@@ -157,9 +157,9 @@
     </message>
 </context>
 <context>
-    <name>OpenPage</name>
+    <name>OpenDatabasePage</name>
     <message>
-        <location filename="../qml/pages/database/OpenPage.qml" line="+9"/>
+        <location filename="../qml/pages/database/OpenDatabasePage.qml" line="+9"/>
         <source>Open Database</source>
         <translation>Открыть базу данных</translation>
     </message>

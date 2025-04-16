@@ -27,7 +27,7 @@ NamedPage {
 
             Component {
                 id: openPageComp
-                OpenPage {}
+                OpenDatabasePage {}
             }
         }
 
