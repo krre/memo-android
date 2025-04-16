@@ -38,7 +38,7 @@ NamedPage {
 
             Component {
                 id: connectPageComp
-                ConnectPage {}
+                ConnectDatabasePage {}
             }
         }
     }

@@ -19,9 +19,9 @@
     </message>
 </context>
 <context>
-    <name>ConnectPage</name>
+    <name>ConnectDatabasePage</name>
     <message>
-        <location filename="../qml/pages/database/ConnectPage.qml" line="+8"/>
+        <location filename="../qml/pages/database/ConnectDatabasePage.qml" line="+8"/>
         <source>Connect to Database</source>
         <translation>Подключиться к базе данных</translation>
     </message>
