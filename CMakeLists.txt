@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.0)
 
-project(memo VERSION 1.0.0)
+project(memo VERSION 1.1.0)
 
 set(PROJECT_TITLE Memo)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
