@@ -41,8 +41,8 @@ TreeItem* TreeItem::find(int id) {
     if (id == 0) return nullptr;
     if (m_id == id) return this;
 
-    for (TreeItem* child : m_children) {
-        TreeItem* item = child->find(id);
+    for (auto child : m_children) {
+        auto item = child->find(id);
 
         if (item) {
             return item;
@@ -53,7 +53,7 @@ TreeItem* TreeItem::find(int id) {
 }
 
 bool TreeItem::insertChild(int position, TreeItem* item) {
-    TreeItem* childItem = item ? item : new TreeItem;
+    auto childItem = item ? item : new TreeItem;
     childItem->setParent(this);
     m_children.insert(position, childItem);
 
@@ -83,7 +83,7 @@ void TreeItem::setId(int id) {
 
 int TreeItem::depth() {
     int counter = 0;
-    TreeItem* item = this;
+    auto item = this;
 
     while (item->id() != 0) {
         counter++;
