@@ -41,7 +41,7 @@ TreeItem* TreeItem::find(int id) {
     if (id == 0) return nullptr;
     if (m_id == id) return this;
 
-    for (auto child : m_children) {
+    for (auto child : std::as_const(m_children)) {
         auto item = child->find(id);
 
         if (item) {
