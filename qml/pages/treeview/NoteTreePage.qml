@@ -97,7 +97,11 @@ NamedPage {
                     treeView.selectionModel.setCurrentIndex(index, ItemSelectionModel.ClearAndSelect)
                 }
 
-                onLongPressed: contextMenu.popup(delegate)
+                onLongPressed: {
+                    const index = treeView.index(row, column)
+                    treeView.selectionModel.setCurrentIndex(index, ItemSelectionModel.ClearAndSelect)
+                    contextMenu.popup(delegate)
+                }
             }
         }
 
