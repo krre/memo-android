@@ -68,6 +68,7 @@ qt_add_qml_module(${PROJECT_NAME}
 qt_add_translations(${PROJECT_NAME}
     SOURCE_TARGETS ${PROJECT_NAME}
     NO_GENERATE_PLURALS_TS_FILE
+    MERGE_QT_TRANSLATIONS
     TS_OUTPUT_DIRECTORY i18n
     # LUPDATE_OPTIONS -no-obsolete
 )
