@@ -3,7 +3,7 @@ import QtQuick.Controls
 
 Page {
     required property string name
-    default property alias data: content.data
+    default property alias contentPage: content.data
     property var toolBar: []
 
     function pushPage(item, properties, operation) {
