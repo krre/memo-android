@@ -21,7 +21,7 @@ public:
     Q_INVOKABLE void close();
     Q_INVOKABLE void remove(const QString& name);
     Q_INVOKABLE void rename(const QString& oldName, const QString& newName);
-    Q_INVOKABLE bool isExists(const QString& name);
+    Q_INVOKABLE bool isExists(const QString& name) const;
     Q_INVOKABLE QStringList files() const;
 
     QString name() const;

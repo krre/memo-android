@@ -62,7 +62,7 @@ void Database::rename(const QString& oldName, const QString& newName) {
     qInfo().noquote() << "Database renamed:" << filePath(newName);
 }
 
-bool Database::isExists(const QString& name) {
+bool Database::isExists(const QString& name) const {
     return QFileInfo::exists(filePath(name));
 }
 
