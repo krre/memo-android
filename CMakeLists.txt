@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 4.3)
 
 project(memo VERSION 1.1.1)
 
